@@ -1,0 +1,402 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"researc",
+				"research_intensity\tabc"
+			],
+			[
+				"PO",
+				"POSIXct\t(DB_Data_visualise.R)"
+			],
+			[
+				"string",
+				"stringsAsFactors\tabc"
+			],
+			[
+				"lay",
+				"lay_inc_hatch_est\tabc"
+			],
+			[
+				"floa",
+				"float_height\tabc"
+			],
+			[
+				"float",
+				"float_height"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"colla",
+				"Trimmer: Collapse lines."
+			],
+			[
+				"replace",
+				"Trimmer: Replace smart characters."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"trimmer",
+				"Trimmer: Delete empty tags."
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"vie",
+				"File: New View into File"
+			],
+			[
+				"add book",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"proje",
+				"Project Manager: Open Project"
+			],
+			[
+				"key",
+				"FindKeyConflicts: All Key Maps to Quick Panel"
+			],
+			[
+				"find",
+				"FindKeyConflicts: All Conflicts"
+			],
+			[
+				"findk",
+				"FindKeyConflicts: All Key Maps to Quick Panel"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"sideb",
+				"Side-by-Side: Sublime Settings"
+			],
+			[
+				"send",
+				"SendCode: Choose Program"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"install packages",
+				"Package Control: Install Package"
+			],
+			[
+				"project",
+				"Preferences: Project Manager Settings"
+			],
+			[
+				"terminu",
+				"Terminus: Open R"
+			],
+			[
+				"terminus",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"REPL R",
+				"Snippet: read package from library"
+			],
+			[
+				"sendcod",
+				"SendCode: Choose Program"
+			],
+			[
+				"repl r",
+				"SublimeREPL: R"
+			],
+			[
+				"rboc",
+				"SublimeREPL: Python - Sublime Text Console"
+			],
+			[
+				"set syntax: r",
+				"Set Syntax: R"
+			],
+			[
+				"rbix",
+				"Preferences: R-Box Settings"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"FindKeyConflicts: All Key Maps to Quick Panel:",
+			"terminus_open",
+			"run Terminus: Open Default Shell in View",
+			"Terminus: Open Default Shell in View",
+			"LSP: Enable Language Server Globally",
+			"LSP: Enable Language Server",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Kubelka et al. 2019 Response_Data, R codes and supporting information",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/R"
+	],
+	"file_history":
+	[
+		"/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Analyses/rebuttal_Kubelka.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Analyses/Constants_Functions.R",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/R/eLetters.R",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Kubelka et al. 2019 Response_Data, R codes and supporting information/Kubelka et al. Response_models and figures.R",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Kubelka et al. 2019 Response_Data, R codes and supporting information/Kubelka et al. Response_models and figures_MB.R",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Global_predation_rates_increase.R",
+		"/Users/martinbulla/Dropbox/Science/MS/Manakins/eLetter_Kubelka.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/eLetter_Kubelka.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_info.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_checks.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_Data_visualise.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_backup.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/inspectors_unipInc.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/MasterDB_upload.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/Methods.md",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/utils.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/unused.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/map_unip_sites.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/to_do.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/actogram.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/logger_issues.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/inspectors_unipInc_temp.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_structure.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/lay_inc_hatch_est.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_collection/MC/Methods.md",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/unip_inc.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/.gitignore",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/decide_where_to_add.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/hatching_temp.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/visual_check.R",
+		"/Users/martinbulla/Library/Application Support/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/actogram_map.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/actogram_utils.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/set_col_map.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/lay_inc_est.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/wadeR/package.wadeR.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/tools_general/ignore_after_commit_git",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/reports/toFix_2019-07-03_search.html",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/reports/toFix_2019-07-03_simple.html",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/reports/toFix_2019-07-02_search.html",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/.gitignore",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/foo.html",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/validators.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/.here",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/unip_inc.sublime-workspace",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/Sublime/connect_to_mariaDB.R",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/Sublime/re-intstall_all.R",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/scicomp.txt",
+		"/Users/martinbulla/Dropbox/MAC/Adobe/READ_ME.txt",
+		"/Users/martinbulla/Dropbox/Science/ms_published/SnowyPlover_cycles/Analyses.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/DataEntry/inst/UI/dbUpdate_UIvbar/global.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/wadeR/README.md",
+		"/Users/martinbulla/Dropbox/Science/PROJECTS/Unip_inc/Analyses/validators.R",
+		"/Users/martinbulla/Dropbox/Science/PROJECTS/Unip_inc/Analyses/utils.R",
+		"/Users/martinbulla/Dropbox/Science/PROJECTS/Unip_inc/Analyses/DB_checks.R",
+		"/Users/martinbulla/Dropbox/Science/PROJECTS/Unip_inc/DB_info.R",
+		"/Users/martinbulla/Dropbox/Science/PROJECTS/Unip_inc/unip_inc.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/PROJECTS/moving_MySQL_DB.R",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/Sublime/short_cuts.R",
+		"/Users/martinbulla/Library/Application Support/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
+		"/Users/martinbulla/Library/Application Support/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/Sublime/setup.sublime-project",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/Sublime/setup.sublime-project.R",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/re-intstall_all.R",
+		"/Users/martinbulla/Dropbox/ARTICLES, BOOKS, LIBRARY/MANUALS/short_cuts.R",
+		"/Users/martinbulla/Dropbox/MAC/SublimeTextLicence"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sim",
+			"fig",
+			"sub97",
+			"lmer( log(DPR + 0.01) ~ log(N_nests) + mean_year  + Latitude + (1|p",
+			"quantile(bsim@sigma, prob=c(0.025,0.5,0.975))",
+			"quantile(bsim@sigma, prob=c(0.025,0.5,0.975))   ",
+			"intensi",
+			"model3 <- lm( log( DPR + 0.01) ~ log(N_nests) + mean_year +  Latitude , data = sub97)\n",
+			"poly",
+			"14"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 106.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "eLetter_Kubelka.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/Science/PROJECTS/Unip_inc/unip_inc.sublime-workspace"
+			],
+			[
+				"setup.sublime-project",
+				"~/Dropbox/Science/PROJECTS/Unip_inc/unip_inc.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 370.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 600.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 385.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

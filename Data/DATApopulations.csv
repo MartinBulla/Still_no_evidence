@@ -1,0 +1,238 @@
+species;clade;family;spec_nr;pop_nr;DPR_orig;DPR;DPR_trans;TPR;TPR_perc;Latitude;Belt;Longitude;Loc_nr;years_nr;mean_year;period_orig;N_nests;Exposure
+Himantopus_novaezelandiae;Charadrii;Other;44;1;0.038095238;0.048095238;YES;0.656337572;65.6337572;-43.862;South temperate;170.45;24;3;1978;before 2000;27;288.75
+Chionis_albus;Charadrii;Other;65;1;0.009827044;0.019827044;YES;0.27095567;27.095567;-62.168;South temperate;-58.693;68;3;1988;before 2000;29;508.8
+Pluvianellus_socialis;Charadrii;Other;87;1;0.0154;0.0254;NO;0.342318768;34.2318768;-51.23;South temperate;-69.494;118;1;2006;after 2000;17;259.74
+Charadrius_falklandicus;Charadrii;Charadriidae;49;1;0.007539042;0.017539042;NO;0.194004166;19.4004166;-42.729;South temperate;-65.036;110;2;2014;after 2000;75;928.5
+Haematopus_fuliginosus;Charadrii;Other;37;1;0.029761905;0.039761905;YES;0.570865891;57.0865891;-40.094;South temperate;148.088;45;2;1988;before 2000;65;873.6
+Haematopus_longirostris;Charadrii;Other;39;1;0.020215633;0.030215633;YES;0.435512725;43.5512725;-40.094;South temperate;148.088;45;2;1988;before 2000;31;445.2
+Thinornis_rubricollis;Charadrii;Charadriidae;96;1;0.042270531;0.052270531;YES;0.726293245;72.6293245;-38.48;South temperate;145.224;107;5;1994;before 2000;70;828
+Thinornis_rubricollis;Charadrii;Charadriidae;96;2;0.011264721;0.021264721;YES;0.288129633;28.8129633;-38.388;South temperate;144.786;94;7;1994;before 2000;149;1953
+Charadrius_obscurus;Charadrii;Charadriidae;46;1;0.018621974;0.028621974;YES;0.462227148;46.2227148;-37.557;South temperate;176.058;85;8;1995;before 2000;261;5316.3
+Haematopus_unicolor;Charadrii;Other;42;1;0.007936508;0.017936508;YES;0.199972159;19.9972159;-36.676;South temperate;174.746;77;4;2008;after 2000;16;252
+Haematopus_moquini;Charadrii;Other;40;2;0;0.01;YES;0;0;-34.46;South temperate;20.552;33;6;1986;before 2000;19;266
+Haematopus_moquini;Charadrii;Other;40;1;0.013661202;0.023661202;YES;0.319651765;31.9651765;-33.806;South temperate;18.369;115;1;2001;after 2000;68;1024.8
+Burhinus_vermiculatus;Charadrii;Other;7;1;0.012524602;0.022524602;YES;0.288443025;28.8443025;-30.972;South temperate;30.282;97;3;2002;after 2000;27;558.9
+Haematopus_palliatus;Charadrii;Other;41;2;0.029813665;0.039813665;YES;0.581123821;58.1123821;-24.859;South tropics;-47.726;119;4;2006;after 2000;22;301.875
+Vanellus_coronatus;Charadrii;Charadriidae;104;1;0;0.01;YES;0;0;-17.799;South tropics;31.021;49;1;1977;before 2000;25;470.4
+Charadrius_sanctaehelenae;Charadrii;Charadriidae;60;1;0.051520608;0.061520608;YES;0.772604862;77.2604862;-15.967;South tropics;-5.717;128;2;2007;after 2000;173;1999.2
+Charadrius_peronii;Charadrii;Charadriidae;57;1;0.020913771;0.030913771;YES;0.446667241;44.6667241;12.197;North tropics;99.993;67;2;2004;after 2000;99;1243.2
+Charadrius_wilsonia;Charadrii;Charadriidae;64;1;0.047979798;0.057979798;YES;0.74131603;74.131603;18.062;North tropics;-63.046;129;1;2004;after 2000;35;396
+Charadrius_wilsonia;Charadrii;Charadriidae;64;2;0.039130435;0.049130435;NO;0.666364668;66.6364668;26.267;North tropics;-97.367;74;1;1979;before 2000;20;230
+Burhinus_oedicnemus;Charadrii;Other;6;2;0.014014014;0.024014014;YES;0.316859487;31.6859487;27.683;North tropics;65.233;98;3;2000;after 2000;105;1498.5
+Charadrius_wilsonia;Charadrii;Charadriidae;64;3;0.015584416;0.025584416;NO;0.3507556;35.07556;28.164;North tropics;-96.741;84;1;1980;before 2000;26;385
+Charadrius_placidus;Charadrii;Charadriidae;58;1;0.037481259;0.047481259;YES;0.669731898;66.9731898;35.741;North temperate;139.317;133;4;2004;after 2000;31;400.2
+Vanellus_cinereus;Charadrii;Charadriidae;103;1;0.015114522;0.025114522;YES;0.371558453;37.1558453;36.293;North temperate;136.311;62;2;2004;after 2000;70;860.1
+Himantopus_himantopus;Charadrii;Other;43;1;0.020334536;0.030334536;NO;0.43453087;43.453087;36.95;North temperate;-6.233;35;2;1990;before 2000;233;3049
+Recurvirostra_avosetta;Charadrii;Other;89;3;0.015260116;0.025260116;NO;0.346859923;34.6859923;36.95;North temperate;-6.233;35;2;1990;before 2000;163;2162.5
+Vanellus_spinosus;Charadrii;Charadriidae;108;1;0.00410509;0.01410509;YES;0.108793487;10.8793487;40.794;North temperate;26.072;41;1;2003;after 2000;39;487.2
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;2;0.052760505;0.062760505;YES;0.792348951;79.2348951;41.687;North temperate;12.375;25;4;1992;before 2000;45;530.7
+Charadrius_melodus;Charadrii;Charadriidae;52;1;0.020904528;0.030904528;YES;0.480511055;48.0511055;42.765;North temperate;-97.062;92;3;2006;after 2000;550;7988.7
+Haematopus_ostralegus;Charadrii;Other;36;4;0.019746336;0.029746336;YES;0.43356964;43.356964;46.391;North temperate;32.033;71;7;1987;before 2000;90;1316.7
+Charadrius_vociferus;Charadrii;Charadriidae;63;1;0.016444258;0.026444258;YES;0.377110766;37.7110766;47.551;North temperate;-101.002;101;28;1977;before 2000;128;1824.345
+Burhinus_oedicnemus;Charadrii;Other;6;1;0.033916701;0.043916701;YES;0.606093168;60.6093168;51.195;North temperate;-1.903;116;2;2004;after 2000;122;1474.2
+Vanellus_vanellus;Charadrii;Charadriidae;109;8;0.02496773;0.03496773;NO;0.543344519;54.3344519;51.385;North temperate;0.805;39;1;1997;before 2000;86;860
+Haematopus_ostralegus;Charadrii;Other;36;1;0.014;0.024;NO;0.330898389;33.0898389;52.308;North temperate;5.526;134;10;1979;before 2000;500;6500
+Recurvirostra_avosetta;Charadrii;Other;89;1;0.005;0.015;NO;0.129639172;12.9639172;52.308;North temperate;5.526;134;10;1979;before 2000;500;6500
+Vanellus_vanellus;Charadrii;Charadriidae;109;3;0.013;0.023;NO;0.333451535;33.3451535;52.308;North temperate;5.526;134;10;1979;before 2000;5000;65000
+Charadrius_melodus;Charadrii;Charadriidae;52;2;0.051523298;0.061523298;YES;0.805988845;80.5988845;52.617;North temperate;-109.983;44;2;1996;before 2000;36;446.4
+Vanellus_vanellus;Charadrii;Charadriidae;109;15;0.032118419;0.042118419;YES;0.63651292;63.651292;53.053;North temperate;-3.633;51;2;1984;before 2000;152;2148.3
+Vanellus_vanellus;Charadrii;Charadriidae;109;14;0.02977496;0.03977496;NO;0.608215865;60.8215865;54.354;North temperate;9.357;4;4;2000;after 2000;179;1731
+Vanellus_vanellus;Charadrii;Charadriidae;109;1;0.0224388;0.0324388;NO;0.50516247;50.516247;54.575;North temperate;-2.411;38;3;1986;before 2000;718;9644.1
+Charadrius_hiaticula;Charadrii;Charadriidae;50;3;0.030482642;0.040482642;NO;0.579702803;57.9702803;55.667;North temperate;-1.833;75;2;1975;before 2000;111;1181
+Haematopus_ostralegus;Charadrii;Other;36;3;0.120879121;0.130879121;NO;0.97456774;97.456774;56.264;North temperate;16.445;124;1;2004;after 2000;25;182
+Vanellus_vanellus;Charadrii;Charadriidae;109;11;0.050808314;0.060808314;NO;0.801403454;80.1403454;56.264;North temperate;16.445;124;1;2004;after 2000;74;866
+Charadrius_hiaticula;Charadrii;Charadriidae;50;4;0.163616792;0.173616792;NO;0.993280321;99.3280321;56.76;North temperate;-2.418;31;2;1975;before 2000;82;464.5
+Charadrius_hiaticula;Charadrii;Charadriidae;50;1;0.051154369;0.061154369;NO;0.770133466;77.0133466;57.338;North temperate;-7.385;125;5;1991;before 2000;183;2209
+Haematopus_ostralegus;Charadrii;Other;36;2;0.011251758;0.021251758;NO;0.275658877;27.5658877;57.338;North temperate;-7.385;125;2;1996;before 2000;86;1422
+Vanellus_vanellus;Charadrii;Charadriidae;109;9;0.033057851;0.043057851;NO;0.647292062;64.7292062;57.338;North temperate;-7.385;125;2;1996;before 2000;169;1815
+Charadrius_semipalmatus;Charadrii;Charadriidae;61;1;0;0.01;YES;0;0;58.695;North temperate;-94.082;56;4;1965;before 2000;15;243.6
+Eudromias_morinellus;Charadrii;Charadriidae;29;1;0.025376685;0.035376685;NO;0.525466264;52.5466264;60.383;Arctic;7.633;50;7;1982;before 2000;53;630.5
+Pluvialis_apricaria;Charadrii;Charadriidae;83;1;0.054878049;0.064878049;NO;0.857330602;85.7330602;60.383;Arctic;7.633;50;7;1982;before 2000;51;492
+Pluvialis_squatarola;Charadrii;Charadriidae;86;4;0.009237875;0.019237875;NO;0.255219465;25.5219465;70.4;Arctic;-150.7;28;4;2012;after 2000;21;433
+Charadrius_hiaticula;Charadrii;Charadriidae;50;2;0.032967033;0.042967033;NO;0.608838741;60.8838741;72.233;Arctic;-23.917;88;1;1974;before 2000;13;182
+Pluvialis_fulva;Charadrii;Charadriidae;85;3;0.121212121;0.131212121;NO;0.986381009;98.6381009;72.906;Arctic;106.104;80;2;2013;after 2000;16;115.5
+Vanellus_miles;Charadrii;Charadriidae;107;2;0.007239;0.017239;YES;0.224530408;22.4530408;-46.419;South temperate;168.288;60;5;1967;before 2000;263;4420.5
+Thinornis_novaeseelandiae;Charadrii;Charadriidae;95;1;0;0.01;YES;0;0;-44.347;South temperate;-176.175;114;2;1984;before 2000;53;928.29
+Charadrius_bicinctus;Charadrii;Charadriidae;47;1;0.012288787;0.022288787;YES;0.318400105;31.8400105;-44.333;South temperate;170.194;104;3;1999;before 2000;39;651
+Haematopus_chathamensis;Charadrii;Other;38;1;0.009819211;0.019819211;YES;0.248860869;24.8860869;-43.784;South temperate;-176.562;54;3;2000;after 2000;118;1731.3
+Vanellus_miles;Charadrii;Charadriidae;107;3;0.042016807;0.052016807;YES;0.777399494;77.7399494;-27.536;South tropics;152.92;108;2;1989;before 2000;26;357
+Vanellus_chilensis;Charadrii;Charadriidae;106;1;0.0234;0.0334;NO;0.531256738;53.1256738;-15.815;South tropics;-47.879;17;1;2007;after 2000;36;639
+Haematopus_palliatus;Charadrii;Other;41;1;0.03117506;0.04117506;NO;0.59769756;59.769756;30.865;North temperate;-81.45;29;2;2003;after 2000;30;417
+Charadrius_nivosus;Charadrii;Charadriidae;55;4;0.032971562;0.042971562;YES;0.62178554;62.178554;36.727;North temperate;-121.796;93;7;1987;before 2000;690;8734.8
+Recurvirostra_americana;Charadrii;Other;88;1;0.056874502;0.066874502;YES;0.807068756;80.7068756;37.433;North temperate;-121.967;117;2;2006;after 2000;56;615.39
+Charadrius_nivosus;Charadrii;Charadriidae;55;1;0.041828198;0.051828198;YES;0.710360235;71.0360235;37.587;North temperate;-122.118;1;2;2009;after 2000;247;2940.6
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;1;0.036695267;0.046695267;YES;0.66182062;66.182062;46.667;North temperate;19.167;90;2;1991;before 2000;58;926.55
+Vanellus_vanellus;Charadrii;Charadriidae;109;16;0.068848147;0.078848147;YES;0.890444077;89.0444077;47.444;North temperate;9.698;81;1;2008;after 2000;123;1292.7
+Vanellus_vanellus;Charadrii;Charadriidae;109;2;0.02820781;0.03820781;NO;0.588115413;58.8115413;49.115;North temperate;14.268;26;18;1997;before 2000;880;13577.8
+Vanellus_vanellus;Charadrii;Charadriidae;109;18;0.043468314;0.053468314;YES;0.747837679;74.7837679;49.589;North temperate;13.069;52;4;1994;before 2000;35;437.1
+Charadrius_dubius;Charadrii;Charadriidae;48;3;0;0.01;YES;0;0;50.195;North temperate;15.977;105;10;1982;before 2000;40;487.35
+Charadrius_melodus;Charadrii;Charadriidae;52;3;0.01684156;0.02684156;YES;0.409351822;40.9351822;50.433;North temperate;-106.667;53;3;2003;after 2000;149;2315.7
+Vanellus_vanellus;Charadrii;Charadriidae;109;10;0.027;0.037;NO;0.571946504;57.1946504;53.184;North temperate;-3.114;43;2;2003;after 2000;241;2410
+Vanellus_vanellus;Charadrii;Charadriidae;109;7;0.03437;0.04437;NO;0.661831426;66.1831426;57.009;North temperate;-4.164;32;3;1985;before 2000;247;4324
+Vanellus_vanellus;Charadrii;Charadriidae;109;17;0.0140639;0.0240639;NO;0.355368051;35.5368051;57.126;North temperate;12.237;140;2;1986;before 2000;54;1020
+Vanellus_vanellus;Charadrii;Charadriidae;109;4;0.005433727;0.015433727;NO;0.155410733;15.5410733;57.592;North temperate;11.976;99;4;1988;before 2000;132;2259.9
+Haematopus_bachmani;Charadrii;Other;35;1;0.017841213;0.027841213;YES;0.401342219;40.1342219;58.508;North temperate;-135.93;13;2;2004;after 2000;86;1008.9
+Vanellus_vanellus;Charadrii;Charadriidae;109;5;0.00488;0.01488;NO;0.140711303;14.0711303;59.95;North temperate;16.283;142;3;1989;before 2000;852;12746
+Charadrius_hiaticula;Charadrii;Charadriidae;50;5;0.022321429;0.032321429;YES;0.468515379;46.8515379;68.61;Arctic;171.241;12;9;1976;before 2000;19;268.8
+Pluvialis_squatarola;Charadrii;Charadriidae;86;3;0.005942653;0.015942653;YES;0.17241388;17.241388;68.61;Arctic;171.241;12;9;1976;before 2000;28;504.825
+Pluvialis_dominica;Charadrii;Charadriidae;84;2;0.017777778;0.027777778;NO;0.439256023;43.9256023;71.3;Arctic;-156.6;10;6;2005;after 2000;53;900
+Anarhynchus_frontalis;Charadrii;Charadriidae;3;1;0.008381226;0.018381226;YES;0.236108467;23.6108467;-43.545;South temperate;172.186;113;2;1982;before 2000;58;835.2
+Charadrius_bicinctus;Charadrii;Charadriidae;47;2;0.011579818;0.021579818;YES;0.303069073;30.3069073;-43.545;South temperate;172.186;113;2;1982;before 2000;127;1813.5
+Haematopus_ostralegus;Charadrii;Other;36;5;0.011138959;0.021138959;YES;0.273300077;27.3300077;-43.545;South temperate;172.186;113;2;1982;before 2000;13;179.55
+Himantopus_himantopus;Charadrii;Other;43;2;0.007065889;0.017065889;YES;0.178624123;17.8624123;-43.545;South temperate;172.186;113;2;1982;before 2000;13;141.525
+Vanellus_miles;Charadrii;Charadriidae;107;1;0.002240896;0.012240896;YES;0.075515859;7.5515859;-38.48;South temperate;145.224;107;1;2010;after 2000;32;1338.75
+Charadrius_ruficapillus;Charadrii;Charadriidae;59;1;0.075091575;0.085091575;YES;0.887600445;88.7600445;-37.885;South temperate;144.799;55;1;2012;after 2000;62;546
+Vanellus_chilensis;Charadrii;Charadriidae;106;2;0;0.01;NO;0;0;-25.45;South tropics;-49.217;30;3;2013;after 2000;50;1399
+Actophilornis_africanus;Charadrii;Other;2;1;0.048414428;0.058414428;YES;0.717888919;71.7888919;-24.672;South tropics;28.66;34;9;1984;before 2000;123;1755.675
+Charadrius_thoracicus;Charadrii;Charadriidae;62;2;0.026340996;0.036340996;YES;0.538895198;53.8895198;-24.145;South tropics;43.829;136;1;2004;after 2000;74;835.2
+Charadrius_marginatus;Charadrii;Charadriidae;51;1;0.03968254;0.04968254;YES;0.678178462;67.8178462;-22.095;South tropics;43.269;7;8;2011;after 2000;341;5443.2
+Charadrius_pecuarius;Charadrii;Charadriidae;56;1;0.035238795;0.045238795;YES;0.613521334;61.3521334;-22.095;South tropics;43.269;7;8;2011;after 2000;829;12855.15
+Charadrius_thoracicus;Charadrii;Charadriidae;62;1;0.02765051;0.03765051;YES;0.556545235;55.6545235;-22.095;South tropics;43.269;7;11;2009;after 2000;522;9330.75
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;6;0.033333333;0.043333333;YES;0.6258674;62.58674;15.2;North tropics;-23.168;83;9;2011;after 2000;542;6960
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;5;0.079653156;0.089653156;YES;0.909927069;90.9927069;16.681;North tropics;42.114;42;3;2008;after 2000;196;1983.6
+Charadrius_nivosus;Charadrii;Charadriidae;55;5;0.013688257;0.023688257;YES;0.329479734;32.9479734;23.9;North tropics;-106.95;27;10;2011;after 2000;731;10300.8
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;4;0.047768324;0.057768324;YES;0.758155561;75.8155561;24.258;North tropics;54.604;3;2;2005;after 2000;239;2679.6
+Charadrius_nivosus;Charadrii;Charadriidae;55;2;0.062318239;0.072318239;YES;0.845257861;84.5257861;26.267;North tropics;-97.367;74;2;1995;before 2000;67;722.1
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;3;0.073891626;0.083891626;YES;0.892057486;89.2057486;27.065;North tropics;49.484;61;1;2015;after 2000;12;121.8
+Charadrius_nivosus;Charadrii;Charadriidae;55;3;0.042875388;0.052875388;YES;0.71940105;71.940105;41.083;North temperate;-112.117;48;4;1991;before 2000;359;4384.8
+Charadrius_montanus;Charadrii;Charadriidae;54;1;0.027223902;0.037223902;YES;0.580814682;58.0814682;47.8;North temperate;-108.017;103;6;1998;before 2000;584;8779.05
+Charadrius_dubius;Charadrii;Charadriidae;48;1;0.027027027;0.037027027;NO;0.541992979;54.1992979;49.0343;North temperate;14.799;135;5;2001;after 2000;73;740
+Vanellus_gregarius;Charadrii;Charadriidae;105;1;0.025427275;0.035427275;NO;0.513817771;51.3817771;50.583;North temperate;70.017;72;10;2009;after 2000;971;12427.6
+Vanellus_gregarius;Charadrii;Charadriidae;105;2;0.04353562;0.05353562;YES;0.712441357;71.2441357;53.173;North temperate;76.047;106;1;2007;after 2000;130;1516
+Charadrius_semipalmatus;Charadrii;Charadriidae;61;2;0.019569472;0.029569472;YES;0.424995663;42.4995663;54.017;North temperate;-132.133;46;5;1986;before 2000;47;613.2
+Pluvialis_dominica;Charadrii;Charadriidae;84;3;0.010568032;0.020568032;NO;0.290101094;29.0101094;58.701;North temperate;-93.802;56;3;2013;after 2000;29;378.5
+Charadrius_mongolus;Charadrii;Charadriidae;53;1;0.021786492;0.031786492;NO;0.442182841;44.2182841;62.543;Arctic;177.076;87;8;2012;after 2000;67;918
+Pluvialis_fulva;Charadrii;Charadriidae;85;1;0.029118774;0.039118774;NO;0.625654229;62.5654229;62.543;Arctic;177.076;87;8;2012;after 2000;57;652.5
+Pluvialis_dominica;Charadrii;Charadriidae;84;1;0.023852117;0.033852117;YES;0.540930286;54.0930286;70.38;Arctic;-149.534;73;4;1990;before 2000;24;377.325
+Pluvialis_squatarola;Charadrii;Charadriidae;86;1;0.014316392;0.024316392;YES;0.367345343;36.7345343;70.38;Arctic;-149.534;73;4;1990;before 2000;25;419.1
+Pluvialis_squatarola;Charadrii;Charadriidae;86;2;0.014998125;0.024998125;YES;0.381091335;38.1091335;71.333;Arctic;-179.5;147;1;2007;after 2000;16;266.7
+Pluvialis_fulva;Charadrii;Charadriidae;85;2;0.023872679;0.033872679;NO;0.552193827;55.2193827;73.079;Arctic;80.654;86;1;2002;after 2000;23;377
+Pluvialis_dominica;Charadrii;Charadriidae;84;4;0.064653858;0.074653858;NO;0.88415999;88.415999;73.2;Arctic;-80;21;9;2009;after 2000;176;1639.5
+Vanellus_vanellus;Charadrii;Charadriidae;109;12;0.023853469;0.033853469;NO;0.526886362;52.6886362;53.523;North temperate;8.398;130;5;2003;after 2000;245;2705
+Rhinoptilus_africanus;Scolopaci;Other;90;1;0.005;0.015;NO;0.122190858;12.2190858;-29.117;South tropics;20.317;37;4;1994;before 2000;12;199.5
+Rhinoptilus_africanus;Scolopaci;Other;90;2;0.0084;0.0184;NO;0.196937271;19.6937271;-25.44;South tropics;20.903;63;2;1964;before 2000;45;475
+Glareola_nuchalis;Scolopaci;Other;33;2;0.051948052;0.061948052;NO;0.673806852;67.3806852;-17.836;South tropics;25.709;95;1;1987;before 2000;12;77
+Glareola_nuchalis;Scolopaci;Other;33;1;0.056216931;0.066216931;YES;0.703301179;70.3301179;0.499;North tropics;12.812;96;9;1974;before 2000;36;302.4
+Rostratula_benghalensis;Scolopaci;Other;91;1;0.009995003;0.019995003;YES;0.20629357;20.629357;24.717;North tropics;121.717;59;1;2005;after 2000;17;200.1
+Glareola_pratincola;Scolopaci;Other;34;1;0.007910141;0.017910141;YES;0.153608644;15.3608644;33.866;North temperate;-7.063;112;2;2003;after 2000;215;1896.3
+Actitis_macularius;Scolopaci;Scolopacidae;111;2;0.013605442;0.023605442;YES;0.285106492;28.5106492;42.34;North temperate;-82.979;14;1;1947;before 2000;35;441
+Actitis_macularius;Scolopaci;Scolopacidae;111;5;0.003401361;0.013401361;YES;0.080086264;8.0086264;42.995;North temperate;-87.882;91;1;1944;before 2000;21;294
+Numenius_americanus;Scolopaci;Scolopacidae;76;1;0.024054983;0.034054983;NO;0.552248979;55.2248979;43.868;North temperate;-116.733;89;3;1978;before 2000;119;1746
+Bartramia_longicauda;Scolopaci;Scolopacidae;5;1;0.020294267;0.030294267;YES;0.425112936;42.5112936;47.551;North temperate;-101.002;101;28;1977;before 2000;608;8278.2
+Catoptrophorus_semipalmatus;Scolopaci;Scolopacidae;26;1;0.02750191;0.03750191;YES;0.535548018;53.5548018;47.551;North temperate;-101.002;101;28;1977;before 2000;77;981.75
+Gallinago_delicata;Scolopaci;Scolopacidae;31;1;0.024743726;0.034743726;YES;0.438006465;43.8006465;47.551;North temperate;-101.002;101;28;1977;before 2000;24;282.9
+Limosa_fedoa;Scolopaci;Scolopacidae;71;1;0.022429262;0.032429262;YES;0.470154299;47.0154299;47.551;North temperate;-101.002;101;28;1977;before 2000;43;579.6
+Steganopus_tricolor;Scolopaci;Scolopacidae;94;1;0.025990903;0.035990903;YES;0.508864472;50.8864472;47.551;North temperate;-101.002;101;28;1977;before 2000;129;1692.9
+Gallinago_gallinago;Scolopaci;Scolopacidae;32;1;0.006;0.016;NO;0.129263317;12.9263317;52.308;North temperate;5.526;134;10;1979;before 2000;500;6000
+Limosa_limosa;Scolopaci;Scolopacidae;74;1;0.011;0.021;NO;0.25817772;25.817772;52.308;North temperate;5.526;134;10;1979;before 2000;5000;70000
+Philomachus_pugnax;Scolopaci;Scolopacidae;82;1;0.001;0.011;NO;0.025190058;2.5190058;52.308;North temperate;5.526;134;10;1979;before 2000;50;750
+Tringa_totanus;Scolopaci;Scolopacidae;101;1;0.007;0.017;NO;0.177110263;17.7110263;52.308;North temperate;5.526;134;10;1979;before 2000;500;7000
+Numenius_arquata;Scolopaci;Scolopacidae;77;1;0.052596976;0.062596976;YES;0.838981745;83.8981745;53.053;North temperate;-3.633;51;2;1984;before 2000;35;456.3
+Actitis_hypoleucos;Scolopaci;Scolopacidae;1;2;0.006614694;0.016614694;YES;0.155689564;15.5689564;53.403;North temperate;-1.789;5;4;1978;before 2000;88;1058.25
+Scolopax_rusticola;Scolopaci;Scolopacidae;93;1;0.02;0.03;NO;0.412178061;41.2178061;54.285;North temperate;-2.691;40;44;1967;before 2000;277;1370
+Numenius_arquata;Scolopaci;Scolopacidae;77;3;0.048401037;0.058401037;NO;0.813042088;81.3042088;54.303;North temperate;-7.616;79;2;1994;before 2000;170;1735.5
+Actitis_hypoleucos;Scolopaci;Scolopacidae;1;1;0.00497977;0.01497977;YES;0.119531702;11.9531702;54.505;North temperate;-3.051;121;14;1944;before 2000;33;401.625
+Gallinago_gallinago;Scolopaci;Scolopacidae;32;2;0.006324111;0.016324111;YES;0.135770075;13.5770075;54.719;North temperate;20.738;64;5;2001;after 2000;32;316.25
+Numenius_arquata;Scolopaci;Scolopacidae;77;2;0.07000307;0.08000307;NO;0.913964993;91.3964993;54.821;North temperate;-6.058;8;3;1993;before 2000;191;1628.5
+Tringa_totanus;Scolopaci;Scolopacidae;101;3;0.07366985;0.08366985;NO;0.880394558;88.0394558;56.264;North temperate;16.445;124;1;2004;after 2000;40;366.5
+Calidris_alpina;Scolopaci;Scolopacidae;10;1;0.042454813;0.052454813;NO;0.66194922;66.194922;57.338;North temperate;-7.385;125;5;1991;before 2000;222;2379
+Tringa_totanus;Scolopaci;Scolopacidae;101;2;0.02345679;0.03345679;NO;0.482466886;48.2466886;57.338;North temperate;-7.385;125;3;1986;before 2000;57;810
+Tringa_nebularia;Scolopaci;Scolopacidae;99;1;0.02268464;0.03268464;YES;0.477624617;47.7624617;58.533;North temperate;-4.232;102;25;1995;before 2000;51;573.075
+Calidris_himantopus;Scolopaci;Scolopacidae;15;1;0.008573388;0.018573388;YES;0.186694464;18.6694464;58.701;North temperate;-93.802;56;4;1965;before 2000;43;583.2
+Calidris_minutilla;Scolopaci;Scolopacidae;20;1;0.008169935;0.018169935;YES;0.178713935;17.8713935;58.701;North temperate;-93.802;56;4;1965;before 2000;56;734.4
+Limnodromus_griseus;Scolopaci;Scolopacidae;69;1;0.020833333;0.030833333;NO;0.409233971;40.9233971;58.701;North temperate;-93.802;56;3;2013;after 2000;22;240
+Numenius_arquata;Scolopaci;Scolopacidae;77;4;0.051593323;0.061593323;NO;0.833114896;83.3114896;61.367;Arctic;22.833;139;3;1996;before 2000;53;659
+Tringa_glareola;Scolopaci;Scolopacidae;98;2;0.005204945;0.015204945;YES;0.129154976;12.9154976;61.713;Arctic;132.077;148;5;1980;before 2000;17;192.125
+Tringa_stagnatilis;Scolopaci;Scolopacidae;100;1;0.005128205;0.015128205;YES;0.125126861;12.5126861;61.713;Arctic;132.077;148;1;1982;before 2000;33;390
+Xenus_cinereus;Scolopaci;Scolopacidae;110;1;0.005291005;0.015291005;YES;0.133450816;13.3450816;61.713;Arctic;132.077;148;1;1982;before 2000;15;189
+Numenius_arquata;Scolopaci;Scolopacidae;77;5;0.002435065;0.012435065;NO;0.079101603;7.9101603;63.083;Arctic;22.933;65;3;1996;before 2000;66;1232
+Arenaria_interpres;Scolopaci;Scolopacidae;4;1;0.033476805;0.043476805;NO;0.586002165;58.6002165;64.017;Arctic;-81.783;126;4;2001;after 2000;97;1045.5
+Numenius_phaeopus;Scolopaci;Scolopacidae;79;3;0.011730205;0.021730205;NO;0.289784519;28.9784519;67.733;Arctic;29.617;141;8;1974;before 2000;29;341
+Tringa_glareola;Scolopaci;Scolopacidae;98;1;0.01986755;0.02986755;NO;0.412447938;41.2447938;67.733;Arctic;29.617;141;18;1979;before 2000;18;151
+Calidris_bairdii;Scolopaci;Scolopacidae;11;2;0.010161053;0.020161053;YES;0.219777852;21.9777852;68.55;Arctic;-83.317;120;4;1982;before 2000;25;492.075
+Limosa_lapponica;Scolopaci;Scolopacidae;73;1;0.015540016;0.025540016;YES;0.32134011;32.134011;69;Arctic;24;66;3;1988;before 2000;15;193.05
+Numenius_phaeopus;Scolopaci;Scolopacidae;79;1;0.084505568;0.094505568;NO;0.922729181;92.2729181;69;Arctic;24;66;3;1988;before 2000;20;234.9
+Calidris_himantopus;Scolopaci;Scolopacidae;15;3;0.034482759;0.044482759;NO;0.56923461;56.923461;70.1;Arctic;-145.8;22;5;2012;after 2000;17;174
+Tryngites_subruficollis;Scolopaci;Scolopacidae;102;3;0.049180328;0.059180328;NO;0.74375802;74.375802;70.1;Arctic;-145.8;22;3;2012;after 2000;15;183
+Phalaropus_lobatus;Scolopaci;Scolopacidae;81;5;0.03125;0.04125;NO;0.510487711;51.0487711;70.38;Arctic;-149.534;73;2;2011;after 2000;13;128
+Limnodromus_scolopaceus;Scolopaci;Scolopacidae;70;4;0.081632653;0.091632653;NO;0.873191455;87.3191455;70.6;Arctic;-154.7;58;3;2012;after 2000;22;196
+Calidris_melanotos;Scolopaci;Scolopacidae;18;4;0.208604954;0.218604954;NO;0.997718468;99.7718468;72.906;Arctic;106.104;80;2;2013;after 2000;88;383.5
+Calidris_minuta;Scolopaci;Scolopacidae;19;2;0.114942529;0.124942529;NO;0.949788745;94.9788745;72.906;Arctic;106.104;80;2;2013;after 2000;17;87
+Philomachus_pugnax;Scolopaci;Scolopacidae;82;3;0.103174603;0.113174603;NO;0.937762605;93.7762605;72.906;Arctic;106.104;80;2;2013;after 2000;37;252
+Calidris_melanotos;Scolopaci;Scolopacidae;18;3;0.045454546;0.055454546;NO;0.701659673;70.1659673;73.2;Arctic;-80;21;6;2011;after 2000;13;110
+Jacana_spinosa;Scolopaci;Other;67;1;0.045155993;0.055155993;YES;0.772051024;77.2051024;10.27;North tropics;-85.225;36;2;1980;before 2000;148;1948.8
+Actitis_macularius;Scolopaci;Scolopacidae;111;1;0.018781924;0.028781924;YES;0.371571693;37.1571693;47.112;North temperate;-94.372;76;15;1982;before 2000;239;4365.9
+Actitis_hypoleucos;Scolopaci;Scolopacidae;1;3;0.010055304;0.020055304;YES;0.227179219;22.7179219;50.195;North temperate;15.977;105;8;1982;before 2000;33;397.8
+Gallinago_gallinago;Scolopaci;Scolopacidae;32;3;0.010869565;0.020869565;YES;0.222264372;22.2264372;53.709;North temperate;27.953;145;2;2000;after 2000;19;184
+Numenius_phaeopus;Scolopaci;Scolopacidae;79;5;0.034782609;0.044782609;NO;0.641797169;64.1797169;55.2;North temperate;-84.3;20;3;2013;after 2000;30;287.5
+Tringa_totanus;Scolopaci;Scolopacidae;101;4;0.008095411;0.018095411;NO;0.201932332;20.1932332;57.126;North temperate;12.237;140;2;1986;before 2000;35;700
+Limosa_haemastica;Scolopaci;Scolopacidae;72;1;0.021337127;0.031337127;YES;0.441408842;44.1408842;58.701;North temperate;-93.802;56;7;1989;before 2000;33;421.8
+Numenius_phaeopus;Scolopaci;Scolopacidae;79;2;0.035790981;0.045790981;YES;0.652492247;65.2492247;58.701;North temperate;-93.802;56;10;1990;before 2000;218;2654.3
+Calidris_mauri;Scolopaci;Scolopacidae;17;4;0.011814346;0.021814346;YES;0.257043104;25.7043104;61.725;Arctic;-165.523;70;3;1997;before 2000;215;2962.5
+Arenaria_interpres;Scolopaci;Scolopacidae;4;2;0.005720006;0.015720006;YES;0.138063326;13.8063326;68.61;Arctic;171.241;12;9;1976;before 2000;47;699.3
+Calidris_alpina;Scolopaci;Scolopacidae;10;5;0.028070175;0.038070175;YES;0.509235967;50.9235967;68.61;Arctic;171.241;12;9;1976;before 2000;46;570
+Calidris_mauri;Scolopaci;Scolopacidae;17;3;0.033333333;0.043333333;YES;0.571531815;57.1531815;68.61;Arctic;171.241;12;9;1976;before 2000;20;240
+Calidris_melanotos;Scolopaci;Scolopacidae;18;2;0.026990553;0.036990553;YES;0.509042979;50.9042979;68.61;Arctic;171.241;12;9;1976;before 2000;23;296.4
+Calidris_temminckii;Scolopaci;Scolopacidae;24;2;0.024890482;0.034890482;YES;0.464790009;46.4790009;68.61;Arctic;171.241;12;9;1976;before 2000;16;200.88
+Eurynorhynchus_pygmeus;Scolopaci;Scolopacidae;30;1;0.04057971;0.05057971;YES;0.614339935;61.4339935;68.61;Arctic;171.241;12;9;1976;before 2000;16;172.5
+Limnodromus_scolopaceus;Scolopaci;Scolopacidae;70;2;0.042955327;0.052955327;YES;0.655169156;65.5169156;68.61;Arctic;171.241;12;9;1976;before 2000;21;232.8
+Phalaropus_fulicarius;Scolopaci;Scolopacidae;80;2;0.042641326;0.052641326;YES;0.629743553;62.9743553;68.61;Arctic;171.241;12;9;1976;before 2000;93;984.96
+Phalaropus_lobatus;Scolopaci;Scolopacidae;81;3;0.035087719;0.045087719;YES;0.552311168;55.2311168;68.61;Arctic;171.241;12;9;1976;before 2000;47;513
+Philomachus_pugnax;Scolopaci;Scolopacidae;82;2;0.027728263;0.037728263;YES;0.511813949;51.1813949;68.61;Arctic;171.241;12;9;1976;before 2000;40;504.9
+Tringa_erythropus;Scolopaci;Scolopacidae;97;1;0.008580009;0.018580009;YES;0.212681608;21.2681608;68.61;Arctic;171.241;12;9;1976;before 2000;15;233.1
+Calidris_fuscicollis;Scolopaci;Scolopacidae;14;2;0.054393305;0.064393305;NO;0.766399379;76.6399379;69.4;Arctic;-81.6;57;2;2013;after 2000;23;239
+Phalaropus_fulicarius;Scolopaci;Scolopacidae;80;3;0.056876061;0.066876061;NO;0.736871481;73.6871481;70.1;Arctic;-145.8;22;5;2012;after 2000;139;1178
+Calidris_pusilla;Scolopaci;Scolopacidae;22;5;0.021274109;0.031274109;NO;0.396697233;39.6697233;70.4;Arctic;-150.7;28;4;2012;after 2000;327;4277.5
+Calidris_bairdii;Scolopaci;Scolopacidae;11;1;0.072965006;0.082965006;YES;0.841351519;84.1351519;72.883;Arctic;-78.917;111;2;2006;after 2000;37;342.63
+Calidris_fuscicollis;Scolopaci;Scolopacidae;14;1;0.074786325;0.084786325;YES;0.86747643;86.747643;72.883;Arctic;-78.917;111;2;2007;after 2000;20;187.2
+Calidris_acuminata;Scolopaci;Scolopacidae;8;1;0.129032258;0.139032258;NO;0.972454299;97.2454299;72.906;Arctic;106.104;80;12;2006;after 2000;15;77.5
+Limicola_falcinellus;Scolopaci;Scolopacidae;68;1;0.041172596;0.051172596;YES;0.654829965;65.4829965;72.906;Arctic;106.104;80;12;2006;after 2000;16;242.88
+Calidris_bairdii;Scolopaci;Scolopacidae;11;3;0.04826546;0.05826546;NO;0.699437573;69.9437573;73.2;Arctic;-80;21;10;2009;after 2000;160;1657.5
+Calidris_alba;Scolopaci;Scolopacidae;9;1;0.014255168;0.024255168;YES;0.354616992;35.4616992;75.728;Arctic;-99.094;11;2;1968;before 2000;14;210.45
+Calidris_canutus;Scolopaci;Scolopacidae;12;1;0.032608696;0.042608696;NO;0.577665401;57.7665401;76.083;Arctic;98.533;69;3;1991;before 2000;18;184
+Coenocorypha_aucklandica;Scolopaci;Scolopacidae;27;1;0;0.01;YES;0;0;-48.03333;South temperate;166.6;123;6;1984;before 2000;40;842.4
+Jacana_jacana;Scolopaci;Other;66;1;0.006613757;0.016613757;YES;0.191312876;19.1312876;6.464;North tropics;-57.76;19;1;1977;before 2000;34;604.8
+Metopidius_indicus;Scolopaci;Other;75;1;0.056638348;0.066638348;YES;0.815639308;81.5639308;9.183;North tropics;77.383;144;3;1996;before 2000;20;300.15
+Cursorius_cursor;Scolopaci;Other;28;1;0.046296296;0.056296296;YES;0.655806189;65.5806189;15.2;North tropics;-23.168;83;2;2014;after 2000;21;216
+Scolopax_minor;Scolopaci;Scolopacidae;92;1;0.018744143;0.028744143;YES;0.367995952;36.7995952;40.525;North temperate;-76.464;132;2;2009;after 2000;13;160.05
+Actitis_macularius;Scolopaci;Scolopacidae;111;3;0.003164056;0.013164056;YES;0.074704633;7.4704633;41.203;North temperate;-72.119;47;2;1970;before 2000;22;316.05
+Actitis_macularius;Scolopaci;Scolopacidae;111;4;0.029024943;0.039024943;YES;0.514043047;51.4043047;47.336;North temperate;-95.193;100;3;1971;before 2000;18;275.625
+Steganopus_tricolor;Scolopaci;Scolopacidae;94;2;0.092592593;0.102592593;YES;0.927445785;92.7445785;47.606;North temperate;-101.185;9;1;1975;before 2000;23;194.4
+Numenius_madagascariensis;Scolopaci;Scolopacidae;78;1;0.015571473;0.025571473;YES;0.411663719;41.1663719;49.397;North temperate;129.908;18;10;2002;after 2000;22;321.1
+Limosa_limosa;Scolopaci;Scolopacidae;74;3;0.127;0.137;NO;0.974450372;97.4450372;52.293;North temperate;106.501;122;1;2002;after 2000;21;110
+Limosa_limosa;Scolopaci;Scolopacidae;74;2;0.0255947;0.0355947;YES;0.503441743;50.3441743;52.517;North temperate;4.783;146;4;1985;before 2000;420;5313.6
+Calidris_minutilla;Scolopaci;Scolopacidae;20;2;0.023700306;0.033700306;YES;0.43766427;43.766427;54.017;North temperate;-132.133;46;5;1986;before 2000;344;3924
+Calidris_alpina;Scolopaci;Scolopacidae;10;2;0.061850444;0.071850444;YES;0.79732418;79.732418;55.47;North temperate;12.97;131;6;1983;before 2000;203;1972.5
+Calidris_alpina;Scolopaci;Scolopacidae;10;4;0.014894251;0.024894251;YES;0.312818686;31.2818686;58.701;North temperate;-93.802;56;8;1988;before 2000;127;1678.5
+Calidris_pusilla;Scolopaci;Scolopacidae;22;3;0.047281324;0.057281324;YES;0.679616641;67.9616641;58.701;North temperate;-93.802;56;3;1981;before 2000;213;2220.75
+Numenius_arquata;Scolopaci;Scolopacidae;77;6;0.024955437;0.034955437;NO;0.574375206;57.4375206;59.817;North temperate;16.55;143;3;1988;before 2000;113;1683
+Numenius_phaeopus;Scolopaci;Scolopacidae;79;4;0.049666525;0.059666525;YES;0.771753148;77.1753148;63.764;Arctic;-20.068;127;2;2009;after 2000;59;704.7
+Calidris_mauri;Scolopaci;Scolopacidae;17;1;0.04089441;0.05089441;NO;0.647904434;64.7904434;64.449;Arctic;-164.977;2;6;2004;after 2000;322;3351
+Calidris_pusilla;Scolopaci;Scolopacidae;22;2;0.03943284;0.04943284;NO;0.611490387;61.1490387;64.449;Arctic;-164.977;2;3;1994;before 2000;134;938
+Phalaropus_lobatus;Scolopaci;Scolopacidae;81;2;0.022059;0.032059;NO;0.394610729;39.4610729;64.79;Arctic;177.637;138;1;2015;after 2000;27;272
+Calidris_tenuirostris;Scolopaci;Scolopacidae;25;1;0.029360492;0.039360492;YES;0.538518623;53.8518623;64.844;Arctic;178.314;6;3;1994;before 2000;13;136.2375
+Calidris_temminckii;Scolopaci;Scolopacidae;24;1;0.027698379;0.037698379;YES;0.501729649;50.1729649;65.021;Arctic;24.72;16;23;1994;before 2000;500;5520.48
+Calidris_ptilocnemis;Scolopaci;Scolopacidae;21;1;0.015952144;0.025952144;NO;0.320187303;32.0187303;66.066;Arctic;-170.7;137;3;1979;before 2000;35;501.5
+Calidris_mauri;Scolopaci;Scolopacidae;17;2;0.03373494;0.04373494;YES;0.57595993;57.595993;66.098546;Arctic;-169.845542;137;3;1979;before 2000;52;622.5
+Calidris_ruficollis;Scolopaci;Scolopacidae;23;1;0.038057417;0.048057417;YES;0.628205181;62.8205181;66.134;Arctic;-169.759;137;3;1979;before 2000;51;604.35
+Calidris_temminckii;Scolopaci;Scolopacidae;24;3;0.074576271;0.084576271;NO;0.85369888;85.369888;67.025;Arctic;-174.142;15;3;1987;before 2000;19;147.5
+Calidris_mauri;Scolopaci;Scolopacidae;17;5;0.045612009;0.055612009;NO;0.688739402;68.8739402;67.1;Arctic;-163.5;23;5;2012;after 2000;157;1732
+Phalaropus_lobatus;Scolopaci;Scolopacidae;81;4;0.031531532;0.041531532;NO;0.513678553;51.3678553;67.1;Arctic;-163.5;23;3;2011;after 2000;35;444
+Phalaropus_lobatus;Scolopaci;Scolopacidae;81;1;0.060560933;0.070560933;NO;0.754786786;75.4786786;69.045;Arctic;-135.048;82;6;2011;after 2000;122;1007.25
+Calidris_pusilla;Scolopaci;Scolopacidae;22;4;0.08411215;0.09411215;NO;0.873148969;87.3148969;69.4;Arctic;-81.6;57;2;2013;after 2000;15;107
+Calidris_alpina;Scolopaci;Scolopacidae;10;3;0.01025641;0.02025641;YES;0.227199417;22.7199417;70.38;Arctic;-149.534;73;4;1990;before 2000;35;487.5
+Calidris_himantopus;Scolopaci;Scolopacidae;15;2;0.013102725;0.023102725;YES;0.271336876;27.1336876;70.38;Arctic;-149.534;73;4;1990;before 2000;29;381.6
+Calidris_melanotos;Scolopaci;Scolopacidae;18;1;0.015323322;0.025323322;YES;0.330678238;33.0678238;70.38;Arctic;-149.534;73;4;1998;before 2000;141;1957.8
+Calidris_pusilla;Scolopaci;Scolopacidae;22;1;0.010074786;0.020074786;YES;0.211764346;21.1764346;70.38;Arctic;-149.534;73;5;1995;before 2000;196;2580.7
+Limnodromus_scolopaceus;Scolopaci;Scolopacidae;70;1;0.013302295;0.023302295;YES;0.277288664;27.7288664;70.38;Arctic;-149.534;73;4;1990;before 2000;17;225.525
+Phalaropus_fulicarius;Scolopaci;Scolopacidae;80;1;0.009746589;0.019746589;YES;0.20013496;20.013496;70.38;Arctic;-149.534;73;4;1990;before 2000;56;718.2
+Tryngites_subruficollis;Scolopaci;Scolopacidae;102;1;0.01610306;0.02610306;YES;0.354881536;35.4881536;70.38;Arctic;-149.534;73;4;1990;before 2000;26;372.6
+Calidris_pusilla;Scolopaci;Scolopacidae;22;6;0.041516246;0.051516246;NO;0.630816932;63.0816932;70.6;Arctic;-154.7;58;4;2012;after 2000;203;2216
+Limnodromus_scolopaceus;Scolopaci;Scolopacidae;70;3;0.033212996;0.043212996;NO;0.559169142;55.9169142;71.3;Arctic;-156.6;10;8;2011;after 2000;171;2077.5
+Tryngites_subruficollis;Scolopaci;Scolopacidae;102;2;0.015037594;0.025037594;NO;0.335751356;33.5751356;71.3;Arctic;-156.6;10;1;2006;after 2000;19;266
+Calidris_alpina;Scolopaci;Scolopacidae;10;6;0.015267176;0.025267176;NO;0.319292766;31.9292766;73.079;Arctic;80.654;86;1;2002;after 2000;27;393
+Calidris_ferruginea;Scolopaci;Scolopacidae;13;2;0.01948052;0.02948052;NO;0.38486733;38.486733;73.079;Arctic;80.654;86;1;2002;after 2000;12;154
+Calidris_minuta;Scolopaci;Scolopacidae;19;1;0.019525802;0.029525802;NO;0.383140654;38.3140654;73.079;Arctic;80.654;86;1;2002;after 2000;126;1434
+Calidris_ferruginea;Scolopaci;Scolopacidae;13;1;0;0.01;YES;0;0;75.267;Arctic;112.467;109;1;1991;before 2000;25;235
+Calidris_maritima;Scolopaci;Scolopacidae;16;1;0.024981548;0.034981548;YES;0.478708676;47.8708676;78.217;Arctic;15.583;78;3;1994;before 2000;34;440.325
+Calidris_alba;Scolopaci;Scolopacidae;9;2;0.032404407;0.042404407;NO;0.633846331;63.3846331;74.478;Arctic;-20.555;149;10;2001;after 2000;74;771.5

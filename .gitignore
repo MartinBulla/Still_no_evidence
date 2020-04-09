@@ -1,0 +1,25 @@
+*.db
+*.db-shm
+*.db-wal
+*.docx
+*.ini
+*.log
+*.orig
+*.pyc
+*.Rcheck/
+.DS_Store
+._.DS_Store
+freeze/
+.git/
+.gitattributes
+.here
+.httr-oauth
+.owncloudsync.log
+.Rhistory
+.Rproj.user
+.sublime-workspace
+MSR/
+Kubelka et al. 2019 Response_Data, R codes and supporting information/
+.=.swp
+.=.swo
+hend,]
