@@ -4,8 +4,8 @@
 		"selected_items":
 		[
 			[
-				"researc",
-				"research_intensity\tabc"
+				"perc",
+				"perc_forest_cover\tabc"
 			],
 			[
 				"PO",
@@ -178,34 +178,48 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters",
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Kubelka et al. 2019 Response_Data, R codes and supporting information",
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/R"
-	],
 	"file_history":
 	[
-		"/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Analyses/rebuttal_Kubelka.sublime-project",
-		"/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Analyses/Constants_Functions.R",
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/R/eLetters.R",
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Kubelka et al. 2019 Response_Data, R codes and supporting information/Kubelka et al. Response_models and figures.R",
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Kubelka et al. 2019 Response_Data, R codes and supporting information/Kubelka et al. Response_models and figures_MB.R",
-		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/Global_predation_rates_increase.R",
-		"/Users/martinbulla/Dropbox/Science/MS/Manakins/eLetter_Kubelka.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_Data_visualise.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_1a_tree.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/passerine_song_frequency.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/MS/Still_no_evidence/R/eLetters.R",
+		"/Users/martinbulla/Dropbox/Science/MS/Still_no_evidence/Still_no_evidence.sublime-project",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_2ab.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/Fig_S2-cor.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_S2-cor.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_S1_trees.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_S2_estimates.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_1b_map.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/__init__.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/questions_Mihai.r",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/random_leftOvers.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/FIT_phylolm.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/DAT_2_song_species.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/DAT_1_song_individual.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/VIS_tree_Fig_S1.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/DATA/HBW-birds_sizes.txt",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/VIS_raw_Fig_3bcd.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/VIS_tree_Fig_1.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/Fig_predictions.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/DATA/asr.txt",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency/R/VIS_map_Fig_2.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency_v2/R/FIT_phylolm.R",
+		"/Users/martinbulla/Dropbox/Science/MS/passerine_song_frequency_v2/R/VIS_map_MB.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/Protocols/defining_ estimating_nesting_parameters.md",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/to_do.R",
+		"/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/dryad/Models.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/unused.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/actogram.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/inspectors_unipInc.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_backup.R",
+		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/Methods.md",
 		"/Users/martinbulla/Dropbox/Science/MS/Kubelka_et_al_eLetters/eLetter_Kubelka.sublime-project",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_info.R",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_checks.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_Data_visualise.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_backup.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/inspectors_unipInc.R",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/MasterDB_upload.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/Methods.md",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/utils.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/unused.R",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/map_unip_sites.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/to_do.R",
-		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/actogram.R",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/logger_issues.R",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/inspectors_unipInc_temp.R",
 		"/Users/martinbulla/Dropbox/Science/DATA_management/unip_inc/R/DB_structure.R",
@@ -269,16 +283,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"sim",
-			"fig",
-			"sub97",
-			"lmer( log(DPR + 0.01) ~ log(N_nests) + mean_year  + Latitude + (1|p",
-			"quantile(bsim@sigma, prob=c(0.025,0.5,0.975))",
-			"quantile(bsim@sigma, prob=c(0.025,0.5,0.975))   ",
-			"intensi",
-			"model3 <- lm( log( DPR + 0.01) ~ log(N_nests) + mean_year +  Latitude , data = sub97)\n",
-			"poly",
-			"14"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -334,13 +338,21 @@
 	"menu_visible": true,
 	"output.SublimeLinter":
 	{
-		"height": 0.0
+		"height": 116.0
 	},
 	"output.diagnostics":
 	{
 		"height": 0.0
 	},
+	"output.exec":
+	{
+		"height": 116.0
+	},
 	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
 	{
 		"height": 0.0
 	},
@@ -368,7 +380,7 @@
 		[
 			[
 				"",
-				"~/Dropbox/Science/PROJECTS/Unip_inc/unip_inc.sublime-workspace"
+				"~/Dropbox/Science/MS/passerine_song_frequency/passerine_song_frequency.sublime-project"
 			],
 			[
 				"setup.sublime-project",
