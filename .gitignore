@@ -2,6 +2,7 @@
 *.db-shm
 *.db-wal
 *.docx
+*.pdf
 *.ini
 *.log
 *.orig
