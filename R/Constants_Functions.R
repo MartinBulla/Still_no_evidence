@@ -84,28 +84,30 @@
    l$var1 = ifelse(is.na(l$var1),"",l$var1)
    l$pred = paste(l$grp,l$var1)
 
-   q050={}
+   q50={}
    q025={}
    q975={}
    pred={}
    
    # variance of random effects
    for (ran in names(bsim@ranef)) {
+     #ran =names(bsim@ranef)[1]
      ran_type = l$var1[l$grp == ran]
      for(i in ran_type){
-      q050=c(q050,quantile(apply(bsim@ranef[[ran]][,,ran_type], 1, var), prob=c(0.5)))
-      q025=c(q025,quantile(apply(bsim@ranef[[ran]][,,ran_type], 1, var), prob=c(0.025)))
-      q975=c(q975,quantile(apply(bsim@ranef[[ran]][,,ran_type], 1, var), prob=c(0.975)))
+        # i = ran_type[2]
+      q50=c(q50,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.5)))
+      q025=c(q025,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.025)))
+      q975=c(q975,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.975)))
       pred= c(pred,paste(ran, i))
       }
      }
    # residual variance
-   q050=c(q050,quantile(bsim@sigma^2, prob=c(0.5)))
+   q50=c(q50,quantile(bsim@sigma^2, prob=c(0.5)))
    q025=c(q025,quantile(bsim@sigma^2, prob=c(0.025)))
    q975=c(q975,quantile(bsim@sigma^2, prob=c(0.975)))
    pred= c(pred,'Residual')
 
-   ri=data.frame(model = name,type='random %',effect=pred, estimate_r=round(100*q050/sum(q050)), lwr_r=round(100*q025/sum(q025)), upr_r=round(100*q975/sum(q975)))
+   ri=data.frame(model = name,type='random %',effect=pred, estimate_r=round(100*q50/sum(q50)), lwr_r=round(100*q025/sum(q025)), upr_r=round(100*q975/sum(q975)))
      rx = ri[ri$effect == 'Residual',]
      if(rx$lwr_r>rx$upr_r){ri$lwr_r[ri$effect == 'Residual'] = rx$upr_r; ri$upr_r[ri$effect == 'Residual'] = rx$lwr_r}
      ri$estimate_r = paste0(ri$estimate_r,'%')

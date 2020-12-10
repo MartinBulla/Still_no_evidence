@@ -140,6 +140,15 @@
     summary(m2c)
     summary(glht(m2c))
 
+  # Picture C - M2 controlled for number of nests to generate an estimate and including interaction with latitude as in our original Figure 1F (referred to by Kubelka et al. 2019) 
+    m2c_asF3E <- lmer( log(DPR + 0.01) ~ log(N_nests) + scale(mean_year)*poly(Latitude,3) + (1|pop_ID) , data = subsub97) 
+    summary(m2c_asF3E)
+    summary(glht(m2c_asF3E))  
+
+    m2c_asF3E <- lmer( log(DPR + 0.01) ~ log(N_nests) + scale(mean_year)*scale(Latitude) + (1|pop_ID) , data = subsub97) 
+    summary(m2c_asF3E)
+    summary(glht(m2c_asF3E))
+
 # Note 5 - Fig DPR original vs log
   source('R/Constants_Functions.R')
   d = data
