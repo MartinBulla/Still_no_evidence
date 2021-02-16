@@ -1,3 +1,14 @@
+# ===========================================================================
+# Supporting information for "Bulla, Valcu & Kempenaers. (2021) "Still no 
+# evidence for disruption of global patterns of nest predation in shorebirds" 
+# Contributor: Martin Bulla
+# 📍 script runs relative to the project's root directory and load packages
+# and functions used in other scripts
+# ===========================================================================
+
+# packages
+  require(arm); require(data.table); require(ggplot2); require(here); require(multcomp); require(performance); require(RColorBrewer); require(viridis); require('writexl')
+  
 # CONSTANTS
   nsim = 5000
   recent = brewer.pal(n = 11, name = "Spectral")[2]#'#f6423f'#"#f04e47"#"#e95a54"#'#B2182B' #'#f74b45' ##'#f6423f' ##
@@ -66,72 +77,99 @@
     newphylo <- bind.tip(tree = phylo, tip.label = newname, edge.length = phylo$edge.length[ed], where = to )
     return( newphylo)
   }
+
 # model output function
-  m_out = function(name = "define", model = m, round_ = 3, nsim = 5000, aic = TRUE, save_sim = FALSE, N = NA){
-  bsim <- sim(model, n.sim=nsim)  
-    if(save_sim!=FALSE){save(bsim, file = paste0(save_sim, name,'.RData'))}
-   v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
-   ci = apply(bsim@fixef, 2, quantile, prob=c(0.025,0.975)) 
-   oi=data.frame(model = name,type='fixed',effect=rownames(coef(summary(model))),estimate=v, lwr=ci[1,], upr=ci[2,])
-      rownames(oi) = NULL
-      oi$estimate_r=round(oi$estimate,round_)
-      oi$lwr_r=round(oi$lwr,round_)
-      oi$upr_r=round(oi$upr,round_)
-  oii=oi[c('model','type',"effect", "estimate_r","lwr_r",'upr_r')] 
-  
-   l=data.frame(summary(model)$varcor)
-   l = l[is.na(l$var2),]
-   l$var1 = ifelse(is.na(l$var1),"",l$var1)
-   l$pred = paste(l$grp,l$var1)
+    m_out = function(name = "define", model = m, round_ = 3, nsim = 5000, aic = TRUE, save_sim = FALSE, N = NA){
+      bsim <- sim(model, n.sim=nsim)  
+        if(save_sim!=FALSE){save(bsim, file = paste0(save_sim, name,'.RData'))}
+       v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
+       ci = apply(bsim@fixef, 2, quantile, prob=c(0.025,0.975)) 
+       oi=data.frame(model = name,type='fixed',effect=rownames(coef(summary(model))),estimate=v, lwr=ci[1,], upr=ci[2,])
+          rownames(oi) = NULL
+          oi$estimate_r=round(oi$estimate,round_)
+          oi$lwr_r=round(oi$lwr,round_)
+          oi$upr_r=round(oi$upr,round_)
+      oii=oi[c('model','type',"effect", "estimate_r","lwr_r",'upr_r')] 
+      
+       l=data.frame(summary(model)$varcor)
+       l = l[is.na(l$var2),]
+       l$var1 = ifelse(is.na(l$var1),"",l$var1)
+       l$pred = paste(l$grp,l$var1)
 
-   q50={}
-   q025={}
-   q975={}
-   pred={}
-   
-   # variance of random effects
-   for (ran in names(bsim@ranef)) {
-     #ran =names(bsim@ranef)[1]
-     ran_type = l$var1[l$grp == ran]
-     for(i in ran_type){
-        # i = ran_type[2]
-      q50=c(q50,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.5)))
-      q025=c(q025,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.025)))
-      q975=c(q975,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.975)))
-      pred= c(pred,paste(ran, i))
-      }
-     }
-   # residual variance
-   q50=c(q50,quantile(bsim@sigma^2, prob=c(0.5)))
-   q025=c(q025,quantile(bsim@sigma^2, prob=c(0.025)))
-   q975=c(q975,quantile(bsim@sigma^2, prob=c(0.975)))
-   pred= c(pred,'Residual')
+       q50={}
+       q025={}
+       q975={}
+       pred={}
+       
+       # variance of random effects
+       for (ran in names(bsim@ranef)) {
+         #ran =names(bsim@ranef)[1]
+         ran_type = l$var1[l$grp == ran]
+         for(i in ran_type){
+            # i = ran_type[2]
+          q50=c(q50,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.5)))
+          q025=c(q025,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.025)))
+          q975=c(q975,quantile(apply(bsim@ranef[[ran]][,,i], 1, var), prob=c(0.975)))
+          pred= c(pred,paste(ran, i))
+          }
+         }
+       # residual variance
+       q50=c(q50,quantile(bsim@sigma^2, prob=c(0.5)))
+       q025=c(q025,quantile(bsim@sigma^2, prob=c(0.025)))
+       q975=c(q975,quantile(bsim@sigma^2, prob=c(0.975)))
+       pred= c(pred,'Residual')
 
-   ri=data.frame(model = name,type='random %',effect=pred, estimate_r=round(100*q50/sum(q50)), lwr_r=round(100*q025/sum(q025)), upr_r=round(100*q975/sum(q975)))
-     rx = ri[ri$effect == 'Residual',]
-     if(rx$lwr_r>rx$upr_r){ri$lwr_r[ri$effect == 'Residual'] = rx$upr_r; ri$upr_r[ri$effect == 'Residual'] = rx$lwr_r}
-     ri$estimate_r = paste0(ri$estimate_r,'%')
-     ri$lwr_r = paste0(ri$lwr_r,'%')
-     ri$upr_r = paste0(ri$upr_r,'%')
-  
-  x = rbind(oii,ri)
-    x$N = ""
-    x$N[1] = N
-    if (aic == TRUE){   
-        x$AIC = ""
-        x$AIC[1]=AIC(update(model,REML = FALSE))
-        x$delta = ""
-        x$prob = ""
-        x$ER = ""
-        }
-     x$R2_mar = ""
-     x$R2_con = ""
-     x$R2_mar [1]= invisible({capture.output({r2_nakagawa(model)$R2_marginal})})
-     x$R2_con [1]= invisible({capture.output({r2_nakagawa(model)$R2_conditional})})
-     #x$R2_mar [1]= r2_nakagawa(model)$R2_marginal
-     #x$R2_con [1]= r2_nakagawa(model)$R2_conditional
-    return(x)
-  } 
+       ri=data.frame(model = name,type='random %',effect=pred, estimate_r=round(100*q50/sum(q50)), lwr_r=round(100*q025/sum(q025)), upr_r=round(100*q975/sum(q975)))
+         rx = ri[ri$effect == 'Residual',]
+         if(rx$lwr_r>rx$upr_r){ri$lwr_r[ri$effect == 'Residual'] = rx$upr_r; ri$upr_r[ri$effect == 'Residual'] = rx$lwr_r}
+         ri$estimate_r = paste0(ri$estimate_r,'%')
+         ri$lwr_r = paste0(ri$lwr_r,'%')
+         ri$upr_r = paste0(ri$upr_r,'%')
+      
+      x = rbind(oii,ri)
+        x$N = ""
+        x$N[1] = N
+        if (aic == TRUE){   
+            x$AIC = ""
+            x$AIC[1]=AIC(update(model,REML = FALSE))
+            x$delta = ""
+            x$prob = ""
+            x$ER = ""
+            }
+        return(x)
+      } 
+
+    m_out_lm = function(name = "define", model = m, round_ = 3, nsim = 5000, aic = TRUE, save_sim = FALSE, N = NA)
+      {
+        # perc_ 1 = proportion or 100%
+      bsim = sim(model, n.sim=nsim)  
+      
+      if(save_sim!=FALSE){save(bsim, file = paste0(save_sim, name,'.RData'))}
+     
+      v = apply(bsim@coef, 2, quantile, prob=c(0.5))
+      ci = apply(bsim@coef, 2, quantile, prob=c(0.025,0.975)) 
+
+      oi=data.frame(model = name,type='fixed',effect=rownames(coef(summary(model))),estimate=v, lwr=ci[1,], upr=ci[2,])
+        rownames(oi) = NULL
+        oi$estimate_r=round(oi$estimate,round_)
+        oi$lwr_r=round(oi$lwr,round_)
+        oi$upr_r=round(oi$upr,round_)
+      x=oi[c('model','type',"effect", "estimate_r","lwr_r",'upr_r')] 
+      x$N = ""
+      x$N[1] = N
+      if (aic == TRUE){   
+          x$AIC = ""
+          x$AIC[1]=AIC(update(model,REML = FALSE))
+          x$delta = ""
+          x$prob = ""
+          x$ER = ""
+          }
+       x$R2 = ""
+       x$R2_adj = ""
+       x$R2_mar [1]= summary(model)$r.squared 
+       x$R2_con [1]= summary(model)$adj.r.squared 
+      return(x)
+      }         
 # model assumption function
   m_ass = function(name = 'define', mo = m0, dat = d, fixed = NULL, categ = NULL, trans = NULL, spatial = TRUE, temporal = TRUE, PNG = TRUE){
    l=data.frame(summary(mo)$varcor)
@@ -161,7 +199,7 @@
    # variables
    scatter={} 
    for (i in rownames(summary(mo)$coef)) {
-		#i = "lat_abs"
+		#i = "mean_year"
       j=sub("\\).*", "", sub(".*\\(", "",i)) 
       scatter[length(scatter)+1]=j
     }
@@ -204,4 +242,42 @@
    mtext(paste(slot(mo,"call")[1],'(',slot(mo,"call")[2],sep=''), side = 3, line = -1, cex=0.7,outer = TRUE)
   if(PNG==TRUE){dev.off()}
   }
-    
+
+# sessionInfo()  
+  # R version 4.0.2 (2020-06-22)
+  # Platform: x86_64-apple-darwin17.0 (64-bit)
+  # Running under: macOS Mojave 10.14.6
+  # 
+  # Matrix products: default
+  # BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+  # LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+  # 
+  # locale:
+  # [1] C/UTF-8/C/C/C/C
+  # 
+  # attached base packages:
+  # [1] stats     graphics  grDevices utils     datasets  methods   base     
+  # 
+  # other attached packages:
+  #  [1] writexl_1.3.1      viridis_0.5.1      viridisLite_0.3.0  RColorBrewer_1.1-2
+  #  [5] performance_0.4.8  multcomp_1.4-13    TH.data_1.0-10     survival_3.1-12   
+  #  [9] mvtnorm_1.1-1      ggplot2_3.3.2      data.table_1.13.0  arm_1.11-2        
+  # [13] lme4_1.1-23        Matrix_1.2-18      MASS_7.3-51.6     
+  # 
+  # loaded via a namespace (and not attached):
+  #  [1] Rcpp_1.0.5          lattice_0.20-41     png_0.1-7           zoo_1.8-8          
+  #  [5] digest_0.6.25       R6_2.4.1            backports_1.1.8     acepack_1.4.1      
+  #  [9] coda_0.19-3         pillar_1.4.6        rlang_0.4.7         rstudioapi_0.11    
+  # [13] minqa_1.2.4         nloptr_1.2.2.2      rpart_4.1-15        checkmate_2.0.0    
+  # [17] splines_4.0.2       statmod_1.4.34      stringr_1.4.0       foreign_0.8-80     
+  # [21] htmlwidgets_1.5.1   munsell_0.5.0       compiler_4.0.2      xfun_0.16          
+  # [25] pkgconfig_2.0.3     base64enc_0.1-3     htmltools_0.5.0     nnet_7.3-14        
+  # [29] insight_0.9.0       tidyselect_1.1.0    tibble_3.0.3        gridExtra_2.3      
+  # [33] htmlTable_2.0.1     Hmisc_4.4-0         codetools_0.2-16    crayon_1.3.4       
+  # [37] dplyr_1.0.1         withr_2.2.0         grid_4.0.2          nlme_3.1-148       
+  # [41] gtable_0.3.0        lifecycle_0.2.0     magrittr_1.5        bayestestR_0.7.2   
+  # [45] scales_1.1.1        stringi_1.5.3       latticeExtra_0.6-29 ellipsis_0.3.1     
+  # [49] generics_0.0.2      vctrs_0.3.2         boot_1.3-25         sandwich_2.5-1     
+  # [53] Formula_1.2-3       tools_4.0.2         glue_1.4.2          purrr_0.3.4        
+  # [57] jpeg_0.1-8.1        abind_1.4-5         colorspace_1.4-1    cluster_2.1.0      
+  # [61] knitr_1.29 

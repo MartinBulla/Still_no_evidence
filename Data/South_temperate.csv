@@ -1,0 +1,25 @@
+species;clade;family;spec_nr;pop_nr;DPR_orig;DPR;DPR_trans;TPR;Latitude;Belt;Longitude;Loc_nr;years_nr;mean_year;period_orig;N_nests;Exposure
+Chionis_albus;Charadrii;Other;65;1;0.009827044;0.019827044;YES;0.27095567;-62.168;South temperate;-58.693;68;3;1988;before 2000;29;508.8
+Pluvianellus_socialis;Charadrii;Other;87;1;0.0154;0.0254;NO;0.342318768;-51.23;South temperate;-69.494;118;1;2006;after 2000;17;259.74
+Coenocorypha_aucklandica;Scolopaci+;Scolopacidae;27;1;0;0.01;YES;0;-48.03333;South temperate;166.6;123;6;1984;before 2000;40;842.4
+Vanellus_miles;Charadrii;Charadriidae;107;2;0.007239;0.017239;YES;0.224530408;-46.419;South temperate;168.288;60;5;1967;before 2000;263;4420.5
+Thinornis_novaeseelandiae;Charadrii;Charadriidae;95;1;0;0.01;YES;0;-44.347;South temperate;-176.175;114;2;1984;before 2000;53;928.29
+Charadrius_bicinctus;Charadrii;Charadriidae;47;1;0.012288787;0.022288787;YES;0.318400105;-44.333;South temperate;170.194;104;3;1999;before 2000;39;651
+Himantopus_novaezelandiae;Charadrii;Other;44;1;0.038095238;0.048095238;YES;0.656337572;-43.862;South temperate;170.45;24;3;1978;before 2000;27;288.75
+Haematopus_chathamensis;Charadrii;Other;38;1;0.009819211;0.019819211;YES;0.248860869;-43.784;South temperate;-176.562;54;3;2000;after 2000;118;1731.3
+Anarhynchus_frontalis;Charadrii;Charadriidae;3;1;0.008381226;0.018381226;YES;0.236108467;-43.545;South temperate;172.186;113;2;1982;before 2000;58;835.2
+Charadrius_bicinctus;Charadrii;Charadriidae;47;2;0.011579818;0.021579818;YES;0.303069073;-43.545;South temperate;172.186;113;2;1982;before 2000;127;1813.5
+Haematopus_ostralegus;Charadrii;Other;36;5;0.011138959;0.021138959;YES;0.273300077;-43.545;South temperate;172.186;113;2;1982;before 2000;13;179.55
+Himantopus_himantopus;Charadrii;Other;43;2;0.007065889;0.017065889;YES;0.178624123;-43.545;South temperate;172.186;113;2;1982;before 2000;13;141.525
+Charadrius_falklandicus;Charadrii;Charadriidae;49;1;0.007539042;0.017539042;NO;0.194004166;-42.729;South temperate;-65.036;110;2;2014;after 2000;75;928.5
+Haematopus_fuliginosus;Charadrii;Other;37;1;0.029761905;0.039761905;YES;0.570865891;-40.094;South temperate;148.088;45;2;1988;before 2000;65;873.6
+Haematopus_longirostris;Charadrii;Other;39;1;0.020215633;0.030215633;YES;0.435512725;-40.094;South temperate;148.088;45;2;1988;before 2000;31;445.2
+Thinornis_rubricollis;Charadrii;Charadriidae;96;1;0.042270531;0.052270531;YES;0.726293245;-38.48;South temperate;145.224;107;5;1994;before 2000;70;828
+Vanellus_miles;Charadrii;Charadriidae;107;1;0.002240896;0.012240896;YES;0.075515859;-38.48;South temperate;145.224;107;1;2010;after 2000;32;1338.75
+Thinornis_rubricollis;Charadrii;Charadriidae;96;2;0.011264721;0.021264721;YES;0.288129633;-38.388;South temperate;144.786;94;7;1994;before 2000;149;1953
+Charadrius_ruficapillus;Charadrii;Charadriidae;59;1;0.075091575;0.085091575;YES;0.887600445;-37.885;South temperate;144.799;55;1;2012;after 2000;62;546
+Charadrius_obscurus;Charadrii;Charadriidae;46;1;0.018621974;0.028621974;YES;0.462227148;-37.557;South temperate;176.058;85;8;1995;before 2000;261;5316.3
+Haematopus_unicolor;Charadrii;Other;42;1;0.007936508;0.017936508;YES;0.199972159;-36.676;South temperate;174.746;77;4;2008;after 2000;16;252
+Haematopus_moquini;Charadrii;Other;40;2;0;0.01;YES;0;-34.46;South temperate;20.552;33;6;1986;before 2000;19;266
+Haematopus_moquini;Charadrii;Other;40;1;0.013661202;0.023661202;YES;0.319651765;-33.806;South temperate;18.369;115;1;2001;after 2000;68;1024.8
+Burhinus_vermiculatus;Charadrii;Other;7;1;0.012524602;0.022524602;YES;0.288443025;-30.972;South temperate;30.282;97;3;2002;after 2000;27;558.9

@@ -1,0 +1,18 @@
+species;clade;family;spec_nr;pop_nr;DPR_orig;DPR;DPR_trans;TPR;Latitude;Belt;Longitude;Loc_nr;years_nr;mean_year;period_orig;N_nests;Exposure
+Glareola_nuchalis;Scolopaci+;Other;33;1;0.056216931;0.066216931;YES;0.703301179;0.499;North tropics;12.812;96;9;1974;before 2000;36;302.4
+Jacana_jacana;Scolopaci+;Other;66;1;0.006613757;0.016613757;YES;0.191312876;6.464;North tropics;-57.76;19;1;1977;before 2000;34;604.8
+Metopidius_indicus;Scolopaci+;Other;75;1;0.056638348;0.066638348;YES;0.815639308;9.183;North tropics;77.383;144;3;1996;before 2000;20;300.15
+Jacana_spinosa;Scolopaci+;Other;67;1;0.045155993;0.055155993;YES;0.772051024;10.27;North tropics;-85.225;36;2;1980;before 2000;148;1948.8
+Charadrius_peronii;Charadrii;Charadriidae;57;1;0.020913771;0.030913771;YES;0.446667241;12.197;North tropics;99.993;67;2;2004;after 2000;99;1243.2
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;6;0.033333333;0.043333333;YES;0.6258674;15.2;North tropics;-23.168;83;9;2011;after 2000;542;6960
+Cursorius_cursor;Scolopaci+;Other;28;1;0.046296296;0.056296296;YES;0.655806189;15.2;North tropics;-23.168;83;2;2014;after 2000;21;216
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;5;0.079653156;0.089653156;YES;0.909927069;16.681;North tropics;42.114;42;3;2008;after 2000;196;1983.6
+Charadrius_wilsonia;Charadrii;Charadriidae;64;1;0.047979798;0.057979798;YES;0.74131603;18.062;North tropics;-63.046;129;1;2004;after 2000;35;396
+Charadrius_nivosus;Charadrii;Charadriidae;55;5;0.013688257;0.023688257;YES;0.329479734;23.9;North tropics;-106.95;27;10;2011;after 2000;731;10300.8
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;4;0.047768324;0.057768324;YES;0.758155561;24.258;North tropics;54.604;3;2;2005;after 2000;239;2679.6
+Rostratula_benghalensis;Scolopaci+;Other;91;1;0.009995003;0.019995003;YES;0.20629357;24.717;North tropics;121.717;59;1;2005;after 2000;17;200.1
+Charadrius_nivosus;Charadrii;Charadriidae;55;2;0.062318239;0.072318239;YES;0.845257861;26.267;North tropics;-97.367;74;2;1995;before 2000;67;722.1
+Charadrius_wilsonia;Charadrii;Charadriidae;64;2;0.039130435;0.049130435;NO;0.666364668;26.267;North tropics;-97.367;74;1;1979;before 2000;20;230
+Charadrius_alexandrinus;Charadrii;Charadriidae;45;3;0.073891626;0.083891626;YES;0.892057486;27.065;North tropics;49.484;61;1;2015;after 2000;12;121.8
+Burhinus_oedicnemus;Charadrii;Other;6;2;0.014014014;0.024014014;YES;0.316859487;27.683;North tropics;65.233;98;3;2000;after 2000;105;1498.5
+Charadrius_wilsonia;Charadrii;Charadriidae;64;3;0.015584416;0.025584416;NO;0.3507556;28.164;North tropics;-96.741;84;1;1980;before 2000;26;385

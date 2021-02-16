@@ -1,0 +1,15 @@
+species;clade;family;spec_nr;pop_nr;DPR_orig;DPR;DPR_trans;TPR;Latitude;Belt;Longitude;Loc_nr;years_nr;mean_year;period_orig;N_nests;Exposure
+Rhinoptilus_africanus;Scolopaci+;Other;90;1;0.005;0.015;NO;0.122190858;-29.117;South tropics;20.317;37;4;1994;before 2000;12;199.5
+Vanellus_miles;Charadrii;Charadriidae;107;3;0.042016807;0.052016807;YES;0.777399494;-27.536;South tropics;152.92;108;2;1989;before 2000;26;357
+Vanellus_chilensis;Charadrii;Charadriidae;106;2;0;0.01;NO;0;-25.45;South tropics;-49.217;30;3;2013;after 2000;50;1399
+Rhinoptilus_africanus;Scolopaci+;Other;90;2;0.0084;0.0184;NO;0.196937271;-25.44;South tropics;20.903;63;2;1964;before 2000;45;475
+Haematopus_palliatus;Charadrii;Other;41;2;0.029813665;0.039813665;YES;0.581123821;-24.859;South tropics;-47.726;119;4;2006;after 2000;22;301.875
+Actophilornis_africanus;Charadrii;Other;2;1;0.048414428;0.058414428;YES;0.717888919;-24.672;South tropics;28.66;34;9;1984;before 2000;123;1755.675
+Charadrius_thoracicus;Charadrii;Charadriidae;62;2;0.026340996;0.036340996;YES;0.538895198;-24.145;South tropics;43.829;136;1;2004;after 2000;74;835.2
+Charadrius_marginatus;Charadrii;Charadriidae;51;1;0.03968254;0.04968254;YES;0.678178462;-22.095;South tropics;43.269;7;8;2011;after 2000;341;5443.2
+Charadrius_pecuarius;Charadrii;Charadriidae;56;1;0.035238795;0.045238795;YES;0.613521334;-22.095;South tropics;43.269;7;8;2011;after 2000;829;12855.15
+Charadrius_thoracicus;Charadrii;Charadriidae;62;1;0.02765051;0.03765051;YES;0.556545235;-22.095;South tropics;43.269;7;11;2009;after 2000;522;9330.75
+Glareola_nuchalis;Scolopaci+;Other;33;2;0.051948052;0.061948052;NO;0.673806852;-17.836;South tropics;25.709;95;1;1987;before 2000;12;77
+Vanellus_coronatus;Charadrii;Charadriidae;104;1;0;0.01;YES;0;-17.799;South tropics;31.021;49;1;1977;before 2000;25;470.4
+Charadrius_sanctaehelenae;Charadrii;Charadriidae;60;1;0.051520608;0.061520608;YES;0.772604862;-15.967;South tropics;-5.717;128;2;2007;after 2000;173;1999.2
+Vanellus_chilensis;Charadrii;Charadriidae;106;1;0.0234;0.0334;NO;0.531256738;-15.815;South tropics;-47.879;17;1;2007;after 2000;36;639
