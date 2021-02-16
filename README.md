@@ -20,3 +20,5 @@ Data, codes and outputs of the analyses.
 Still_no_evidence.sublime-project - sublime project file
 
 LICENSE - contains terms of reuse
+
+.gitignore - contains inclusiong and exclusion criteria for the repository
