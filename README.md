@@ -8,7 +8,7 @@ Data, codes and outputs of the analyses.
 
 ### **Folders and files**
 
-[Data](Data/): all data used in the analyses are (for convinience copied) from [Kubelka et al 2018](https://doi.org/10.5061/dryad.45g90h4) or [Kubelka et al 2019](https://osf.io/46bt3/), except for 'Rebuttal_data_with_DPR_by_yr.csv' and 'sources.xlsx', which were copied from [Bulla et al. 2019](https://osf.io/x8fs6/)
+[Data](Data/): all data used in the analyses are (for convenience copied) from [Kubelka et al. 2018](https://doi.org/10.5061/dryad.45g90h4) or [Kubelka et al. 2019](https://osf.io/46bt3/), except for 'Rebuttal_data_with_DPR_by_yr.csv' and 'sources.xlsx', which were copied from [Bulla et al. 2019](https://osf.io/x8fs6/)
 
 [R](R/): all r-scripts used in the analyses
 - Constants_Functions.R loads functions and packages used in the other R-scripts (needs to be loaded before running the other scripts)
@@ -21,4 +21,4 @@ Still_no_evidence.sublime-project - sublime project file
 
 LICENSE - contains terms of reuse
 
-.gitignore - contains inclusiong and exclusion criteria for the repository
+.gitignore - contains inclusion and exclusion criteria for the repository
