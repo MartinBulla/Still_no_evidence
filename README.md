@@ -1,4 +1,4 @@
-### Supporting information for "**Still no evidence for disruption of global patterns of nest predation in shorebirds**"
+## Supporting information for<span style="color:grey">some *grey* text</span> "Still no evidence for disruption of global patterns of nest predation in shorebirds"
 
 by Martin Bulla, Mihai Valcu and Bart Kempenaers
 
