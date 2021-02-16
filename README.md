@@ -1,4 +1,4 @@
-## Supporting information for "Still no evidence for disruption of global patterns of nest predation in shorebirds"
+### Supporting information for "**Still no evidence for disruption of global patterns of nest predation in shorebirds**"
 
 by Martin Bulla, Mihai Valcu and Bart Kempenaers
 
@@ -6,7 +6,7 @@ by Martin Bulla, Mihai Valcu and Bart Kempenaers
 
 Data, codes and outputs of the analyses. 
 
-Complement the original [Bulla et al. 2019 comment in Science](https://science.sciencemag.org/content/364/6445/eaaw8529) in showing the lack of evidence for disruption of global patterns of nest predation in shorebirds by demonstrating issues with Kubelka et al.'s response ([2019, Science](https://science.sciencemag.org/content/364/6445/eaaw9893)) and with their initial study ([2018, Science](https://science.sciencemag.org/content/362/6415/680)).
+Complement [Bulla et al.'s 2019 comment in Science](https://science.sciencemag.org/content/364/6445/eaaw8529) in showing the lack of evidence for disruption of global patterns of nest predation in shorebirds by demonstrating issues with Kubelka et al.'s response ([2019, Science](https://science.sciencemag.org/content/364/6445/eaaw9893)) and with their initial study ([2018, Science](https://science.sciencemag.org/content/362/6415/680)).
 
 ### **Folders and files**
 
