@@ -4,7 +4,9 @@ by Martin Bulla, Mihai Valcu and Bart Kempenaers
 
 ### **Overview**
 
-Data, codes and outputs of the analyses.  
+Data, codes and outputs of the analyses. 
+
+Complement the original [Bulla et al. 2019 comment in Science](https://science.sciencemag.org/content/364/6445/eaaw8529) in showing the lack of evidence for disruption of global patterns of nest predation in shorebirds by demonstrating issues with Kubelka et al.'s response ([2019, Science](https://science.sciencemag.org/content/364/6445/eaaw9893)) and with their initial study ([2018, Science](https://science.sciencemag.org/content/362/6415/680)).
 
 ### **Folders and files**
 
@@ -15,10 +17,10 @@ Data, codes and outputs of the analyses.
 - Prepare_data_from_Bulla_et_al_2019.R script from [Bulla et al. 2019](https://osf.io/x8fs6/) prepares the datasets (but only after Constants_Functions.R is loaded) for Analyses_Note_6_Figure&Table_Beintema.R
 - Analyses scripts generate the all outputs for the main text, figures, tables and notes
 
-[Output](Output/): contains outputs of the Figures and Table scripts
+[Output](Output/): outputs of the Figures and Table scripts
 
 Still_no_evidence.sublime-project - sublime project file
 
-LICENSE - contains terms of reuse
+LICENSE - terms of reuse
 
-.gitignore - contains inclusion and exclusion criteria for the repository
+.gitignore - inclusion and exclusion criteria for the repository
