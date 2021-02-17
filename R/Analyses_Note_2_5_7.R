@@ -346,16 +346,6 @@
         summary(glht(m))
         m <- lmer( log(DPR) ~ log(N_nests) + mean_year  + (1|pop_ID) , data = subsub97) 
         m <- lmer( log(DPR) ~ Latitude + mean_year  + (1|pop_ID) , data = subsub97) 
-# not used - results based on the mean year estimates from less than 10 years of high quality data
-  d = data
-  dd =d[d$DPR_trans == 'NO' & data$years_nr<10,]
-
-  nrow(dd)
-  m = lmer( log(DPR) ~ log(N_nests) + mean_year  + Latitude + (1|site) , data = dd)
-  m = lmer( log(DPR) ~  mean_year  + (1|site) , data = dd)
-  
-  summary(m)
-  summary(glht(m))
 
 # sessionInfo()
   # R version 4.0.2 (2020-06-22)
