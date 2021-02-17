@@ -3,7 +3,7 @@
 # evidence for disruption of global patterns of nest predation in shorebirds" 
 # Contributor: Martin Bulla
 # 📍 script runs relative to the project's root directory and uses Kubelka et 
-# al's and Bulla et al.'s 2019 data to generate Note's 9 Table AB and Figure
+# al's and Bulla et al.'s 2019 data to generate Note's 8 Figure and Table
 # ===========================================================================
 
 # TOOLS
