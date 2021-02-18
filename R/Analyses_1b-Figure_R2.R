@@ -617,7 +617,7 @@
     figure2 = figure2 + geom_text(x=1953, y=0.0625, label="Northern hemisphere", size = 3, col ='grey30', adj = 0) + geom_point(x = 1950, y = 0.0625,col = "lightgoldenrod3")
     figure2 = figure2 + geom_text(x=1953, y=0.0565, label="Southern hemisphere", col = "grey30", size = 3, adj = 0)+ geom_point(x = 1950, y = 0.0565,col = "lemonchiffon4")
 
-    ggsave('Outputs/respEmail_Fig1A_original.png', figure2, , width = 3.5, height = 2)
+    #ggsave('Outputs/respEmail_Fig1A_original.png', figure2, , width = 3.5, height = 2)
 
     f2_title = figure2 + ggtitle(label ="Figure 1A as in Kubelka et al. 2019b", subtitle = "lines based on\nlm(log(DPR+0.01)~poly(mean_year,1)+Latitude") + 
         theme(plot.title = element_text(size=9),
@@ -676,7 +676,6 @@
       predo <- data.frame( years = yearsT, predtempN = predtempN, hemis = FALSE )
       predoLwr <- data.frame( years = yearsT, predtempN = predtempNUPR, hemis = FALSE )
       predoUpr <- data.frame( years = yearsT, predtempN = predtempNLWR, hemis = FALSE )
-   
     
     figure2Alog_ = 
         ggplot() + aes( colour = hemis ) +
@@ -795,8 +794,97 @@
           plot.subtitle = element_text(size=8),
           legend.position="none")
       ggsave('Outputs/respEmail_Fig1A_site-control_but_logScale.png', figure2Alog_title, , width = 3.2, height = 2.75)  
+  # plot Kubelka et al's original Figure A on log-scale and with control for site with interaction
+    # prepare predictions
+      #m <- lm( scale(log(DPR + 0.01)) ~  scale(mean_year)*scale(Latitude) , data = datapred) 
+      #m <- lmer( scale(log(DPR)) ~  scale(mean_year)*scale(Latitude) + (1|pop_ID) , data = datapred)
+      #summary(glht(m))
+      m <- lmer( log(DPR) ~  mean_year*Latitude + (1|pop_ID) , data = datapred) 
+      nsim <- 5000
+      bsim <- sim(m, n.sim=nsim) 
+      v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
+              apply(bsim@fixef, 2, quantile, prob=c(0.025,0.5,0.975))
+      # values to predict for   
+        newD=data.frame(mean_year = seq(1944,2015, length.out=300), 
+                          Latitude = 56)
+           
+      # exactly the model which was used has to be specified here 
+        X <- model.matrix(~ mean_year*Latitude,data=newD)  
+                      
+      # calculate predicted values and creditability intervals
+        newD$pred <- (X%*%v) 
+        predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
+        for(i in 1:nsim) predmatrix[,i] <- (X%*%bsim@fixef[i,])
+            newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
+            newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
+        arc=newD   
 
-  # plot predictions - controlled for population and using  latitude
+      # values to predict for   
+        newD=data.frame(mean_year = seq(1964,2015, length.out=300), 
+                          Latitude = -35)
+           
+      # exactly the model which was used has to be specified here 
+        X <- model.matrix(~ mean_year*Latitude,data=newD)  
+                      
+      # calculate predicted values and creditability intervals
+        newD$pred <- (X%*%v) # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
+        predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
+        for(i in 1:nsim) predmatrix[,i] <- (X%*%bsim@fixef[i,])
+            newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
+            newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
+        NTemp=newD  
+
+      yearsA <- arc$mean_year
+      yearsT <- NTemp$mean_year
+
+      predarctic  <- arc$pred
+      predtempN <- NTemp$pred
+      predarcticUPR = arc$upr
+      predarcticLWR = arc$lwr
+      predtempNUPR = NTemp$upr
+      predtempNLWR  = NTemp$lwr
+
+      preda <- data.frame( years = yearsA, predarctic = predarctic,hemis = TRUE )
+      predaLwr <- data.frame( years = yearsA, predarctic = predarcticLWR,hemis = TRUE )
+      predaUpr <- data.frame( years = yearsA, predarctic = predarcticUPR,hemis = TRUE )
+      predo <- data.frame( years = yearsT, predtempN = predtempN, hemis = FALSE )
+      predoLwr <- data.frame( years = yearsT, predtempN = predtempNUPR, hemis = FALSE )
+      predoUpr <- data.frame( years = yearsT, predtempN = predtempNLWR, hemis = FALSE )
+    # plot 
+      figure2Alog = 
+        ggplot() + aes( colour = hemis ) +
+        geom_line( aes(x = years, y = predarctic), preda  ) + 
+        geom_line( aes(x = years, y = predarctic), predaLwr, lty = 3) + 
+        geom_line( aes(x = years, y = predarctic), predaUpr, lty = 3) + 
+
+        geom_line( aes(x = years, y = predtempN), predo  ) +
+        geom_line( aes(x = years, y = predtempN), predoLwr, lty = 3) + 
+        geom_line( aes(x = years, y = predtempN), predoUpr, lty = 3) +
+        
+        scale_color_manual(breaks = c( "TRUE", "FALSE"), values = c("lightgoldenrod3", "lemonchiffon4"), guide = FALSE ) +
+        scale_y_continuous(breaks = log(c(0.01,0.02,0.04, 0.06)), labels = c('0.01', '0.02', '0.04', '0.06'), limits = c(log(c(0.01,0.06)))) +
+        labs(x = "Year", y = "DPR") +
+        theme_bw() + 
+        theme( panel.border = element_blank(), 
+               panel.grid.major = element_blank(),
+               panel.grid.minor = element_blank(), 
+               #legend.position="none",
+               axis.line = element_line(colour = 'black', size = 0.25),
+               axis.ticks = element_line(colour = "black", size = 0.25),
+               axis.text.x = element_text(size = 10),
+               axis.text.y = element_text(size = 8),
+               #axis.title.x=element_blank(),
+               axis.title.y=element_text(size = 10) )
+
+
+      
+      figure2Alog_title = figure2Alog + ggtitle(label ="Figure 1A controlled for sit,\nand on log-scale", subtitle = "lines based on\nlm(log(DPR)~mean_year*Latitude+(1|site)") + 
+        theme(plot.title = element_text(size=9),
+          plot.subtitle = element_text(size=8),
+          legend.position="none")
+      ggsave('Outputs/respEmail_Fig1A_site-control_but_logScale_Int.png', figure2Alog_title, , width = 3.2, height = 2.75)  
+
+  # plot predictions - interaction - controlled for population and using  latitude
     # prepare predictions
       #m <- lm( log(DPR + 0.01) ~  mean_year*Latitude , data = datapred) 
       m <- lmer( log(DPR + 0.01) ~  mean_year*Latitude + (1|pop_ID) , data = datapred) 
@@ -882,15 +970,13 @@
       #figure2A = figure2A + geom_text(x=1970, y=0.0625, label="Northern hemisphere", col = "lightgoldenrod3", size = 3)
       #figure2A = figure2A + geom_text(x=1970, y=0.055, label="Southern hemisphere", col = "lemonchiffon4", size = 3)
 
-      ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_Latitude.png', figure2Alat, width = 3.5, height = 2)
-
-      f2A_title = figure2A + ggtitle(label ="Test for interaction & control for site", subtitle = "lines based on\nlm(log(DPR+0.01)~mean_year*Latitude+(1|site)") + 
+      f2A_title = figure2Alat + ggtitle(label ="Test for interaction & control for site", subtitle = "lines based on\nlm(log(DPR+0.01)~mean_year*Latitude+(1|site)") + 
         theme(plot.title = element_text(size=9),
           plot.subtitle = element_text(size=8),
           legend.position="none")
       ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_Lat_title.png', f2A_title, , width = 3.2, height = 2.75)
 
-  # plot predictions - controlled for population and N nests and using  latitude
+  # plot predictions - interaction - controlled for population and N nests and using  latitude
     # prepare predictions
       datapred$log_Nnests = log(datapred$N_nests)
       m <- lmer( log(DPR + 0.01) ~  log_Nnests + mean_year*Latitude + (1|pop_ID) , data = datapred) 
@@ -976,8 +1062,8 @@
       #figure2A = figure2A + geom_text(x=1970, y=0.0625, label="Northern hemisphere", col = "lightgoldenrod3", size = 3)
       #figure2A = figure2A + geom_text(x=1970, y=0.055, label="Southern hemisphere", col = "lemonchiffon4", size = 3)
 
-      ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_Latitude.png', figure2Alat, width = 3.5, height = 2)
-  # plot predictions - controlled for population and using latitude on original scale
+      ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_Latitude.png', figure2AlatN, width = 3.5, height = 2)
+  # plot predictions - interaction - controlled for population and using latitude on original scale
     # prepare predictions
       #m <- lm( DPR  ~  mean_year*Latitude , data = datapred) 
       m <- lmer( DPR_orig  ~  mean_year*Latitude + (1|pop_ID) , data = datapred) 
@@ -1064,7 +1150,7 @@
       #figure2A = figure2A + geom_text(x=1970, y=0.055, label="Southern hemisphere", col = "lemonchiffon4", size = 3)
 
       ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_Latitude_noLog.png', figure2Alat_natScale, width = 3.5, height = 2)
-  # plot predictions - controlled for population and using hemisphere
+  # plot predictions - interaction - controlled for population and using hemisphere
     # prepare predictions
       m <- lm( log(DPR + 0.01) ~ scale(mean_year)*hemisphere , data = datapred) 
       summary(glht(m)) 
@@ -1143,93 +1229,6 @@
       #figure2A = figure2A + geom_text(x=1970, y=0.055, label="Southern hemisphere", col = "lemonchiffon4", size = 3)
 
       ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_hem.png', figure2Ahem, width = 3.5, height = 2)
-
-  # plot predictions - controlled for population and using absolute latitude - makes little sense in this case
-    # prepare predictions
-      m <- lmer( log(DPR + 0.01) ~ mean_year*absLat + (1|pop_ID) , data = datapred) 
-      nsim <- 5000
-      bsim <- sim(m, n.sim=nsim) 
-      v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
-              apply(bsim@fixef, 2, quantile, prob=c(0.025,0.5,0.975))
-      # values to predict for   
-        newD=data.frame(mean_year = seq(1944,2015, length.out=300), 
-                          absLat = 56)
-           
-      # exactly the model which was used has to be specified here 
-        X <- model.matrix(~ mean_year*absLat,data=newD)  
-                      
-      # calculate predicted values and creditability intervals
-        newD$pred <- exp(X%*%v)-0.01 # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
-        predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
-        for(i in 1:nsim) predmatrix[,i] <- exp(X%*%bsim@fixef[i,])-0.01
-            newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
-            newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
-        arc=newD   
-
-      # values to predict for   
-        newD=data.frame(mean_year = seq(1964,2015, length.out=300), 
-                          absLat = 35)
-           
-      # exactly the model which was used has to be specified here 
-        X <- model.matrix(~ mean_year*absLat,data=newD)  
-                      
-      # calculate predicted values and creditability intervals
-        newD$pred <- exp(X%*%v)-0.01 # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
-        predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
-        for(i in 1:nsim) predmatrix[,i] <- exp(X%*%bsim@fixef[i,])-0.01
-            newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
-            newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
-        NTemp=newD  
-
-      yearsA <- arc$mean_year
-      yearsT <- NTemp$mean_year
-
-      predarctic  <- arc$pred
-      predtempN <- NTemp$pred
-      predarcticUPR = arc$upr
-      predarcticLWR = arc$lwr
-      predtempNUPR = NTemp$upr
-      predtempNLWR  = NTemp$lwr
-
-      preda <- data.frame( years = yearsA, predarctic = predarctic,hemis = TRUE )
-      predaLwr <- data.frame( years = yearsA, predarctic = predarcticLWR,hemis = TRUE )
-      predaUpr <- data.frame( years = yearsA, predarctic = predarcticUPR,hemis = TRUE )
-      predo <- data.frame( years = yearsT, predtempN = predtempN, hemis = FALSE )
-      predoLwr <- data.frame( years = yearsT, predtempN = predtempNUPR, hemis = FALSE )
-      predoUpr <- data.frame( years = yearsT, predtempN = predtempNLWR, hemis = FALSE )
-    # plot 
-      figure2A <- ggplot( datasummary, aes( x = decade*10 +5, y = meandpr ) , x = "Year", y = "Mean DPR" ) + aes( colour = hemis ) +
-        geom_errorbar( aes(ymin = minusse, ymax = plusse), width = 0.1, position = position_dodge(width = 0.25) )+
-        geom_point( aes(size = n), position = position_dodge(width = 0.25)) +
-        scale_color_manual(breaks = c( "TRUE", "FALSE"), values = c("lightgoldenrod3", "lemonchiffon4"), guide = FALSE ) +
-        guides(size=guide_legend(title=expression(N[estimates])))+
-        ylim(0, 0.07) +
-        labs(x = "Year", y = "Mean DPR") +
-        theme_bw() + 
-        theme( panel.border = element_blank(), 
-               panel.grid.major = element_blank(),
-               panel.grid.minor = element_blank(), 
-               #legend.position="none",
-               axis.line = element_line(colour = 'black', size = 0.25),
-               axis.ticks = element_line(colour = "black", size = 0.25),
-               axis.text.x = element_text(size = 10),
-               axis.text.y = element_text(size = 8),
-               #axis.title.x=element_blank(),
-               axis.title.y=element_text(size = 10) )
-
-      figure2A <- figure2A + 
-        geom_line( aes(x = years, y = predarctic), preda  ) + 
-        geom_line( aes(x = years, y = predarctic), predaLwr, lty = 3) + 
-        geom_line( aes(x = years, y = predarctic), predaUpr, lty = 3) + 
-
-        geom_line( aes(x = years, y = predtempN), predo  ) +
-        geom_line( aes(x = years, y = predtempN), predoLwr, lty = 3) + 
-        geom_line( aes(x = years, y = predtempN), predoUpr, lty = 3)
-
-      #figure2A = figure2A + geom_text(x=1970, y=0.0625, label="Northern hemisphere", col = "lightgoldenrod3", size = 3)
-      #figure2A = figure2A + geom_text(x=1970, y=0.055, label="Southern hemisphere", col = "lemonchiffon4", size = 3)
-
-      ggsave('Outputs/respEmail_Fig1A_N_interaction_siteControl_absLat.png', figure2A, width = 3.5, height = 2)
  
 # sessionInfo()
   # R version 4.0.2 (2020-06-22)
