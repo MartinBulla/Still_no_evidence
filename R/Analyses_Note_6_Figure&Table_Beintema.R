@@ -18,88 +18,57 @@
     b = data.table(b)
     b[,hem01 := ifelse(hemisphere == 'Northern', 1,0)]
 
-# check whether Beintema transformation of Kubelka follows from their methods (i.e. vs our recalculated ones) - it mostly does
-    u=b[b$DPRtrans=='YES',]
-    #u=u[-which(is.na(u$obs_time)| is.na(u$other_failed)),]
-    r = u$obs_time
-    u$expMB = (r*u$Incubation_days*(u$other_failed +u$predated)/2)+(r*u$Incubation_days*(u$hatched+u$infertile))
-    u[Exposure_days!=expMB,.(Exposure_days, expMB)]
-    u$DPR_MB = u$predated/u$expMB
-    u[DPR_orig!=DPR_MB,.(DPR_orig, DPR_MB)]
-    summary(u[DPR_orig!=DPR_MB,DPR_orig-DPR_MB])
+# check whether Beintema transformation of Kubelka follows from their methods 
+# i.e. whether exposure in their dataset and recalculated based on their data and methods are same
+# mostly yes (for transformed data 5 datapoints are off, for non-transfomred 6)
+    # for transformed data
+      u=b[b$DPRtrans=='YES',]
+      #u=u[-which(is.na(u$obs_time)| is.na(u$other_failed)),]
+      r = u$obs_time
+      u$expMB = (r*u$Incubation_days*(u$other_failed +u$predated)/2)+(r*u$Incubation_days*(u$hatched+u$infertile)) # recalculate exposure based on values Kubelka et al's values and methods
+      u[Exposure_days!=expMB,.(Exposure_days, expMB)]
+      u$DPR_MB = u$predated/u$expMB # use recalculated exposure for DPR estimation
+      u[DPR_orig!=DPR_MB,.(DPR_orig, DPR_MB)] # show discrepancies with Kubelka et al.
+      u[round(DPR_orig,4)!=round(DPR_MB,4),.(DPR_orig, DPR_MB)] # show discrepancies with Kubelka et al.
+      (u[round(DPR_orig,4)!=round(DPR_MB,4),DPR_orig-DPR_MB]) 
+      summary(u[round(DPR_orig,4)!=round(DPR_MB,4),DPR_orig-DPR_MB]) # summarize discrepancies with Kubelka et al.
+      ggplot(u[round(DPR_orig,4)!=round(DPR_MB,4)], aes(x = DPR_orig, y = DPR_MB)) + geom_point() +geom_abline(slopw =1, intercep = 0, lty = 3) +ylim(c(0,0.06)) + xlim(c(0,0.06)) 
+
+    # for untransformed data
+      u=b[b$DPRtrans=='NO',]
+      u[, DPR_orig_recalc:= predated/exposure_recal]
+      u = u[!is.na(DPR_orig_recalc)]
+      u[DPR_orig!=DPR_orig_recalc,.(DPR_orig, DPR_orig_recalc)]
+      u[round(DPR_orig,4)!=round(DPR_orig_recalc,4),.(DPR_orig, DPR_orig_recalc)]
+      u[round(DPR_orig,4)!=round(DPR_orig_recalc,4), DPR_orig-DPR_orig_recalc]
+      summary(u[round(DPR_orig,4)!=round(DPR_orig_recalc,4), DPR_orig-DPR_orig_recalc])
+      ggplot(u, aes(x = DPR_orig, y = DPR_orig_recalc)) + geom_point() +geom_abline(slopw =1, intercep = 0, lty = 3) 
 
 # recalculate DPR and add DPR based on 50% assumption for transformed data
-    b[, exposure_recal := Exposure_days]
+  # recalculate DPR using Kubelka et al's method and data 
+    b[, exposure_recal := Exposure_days] 
     b[DPRtrans=='YES', exposure_recal := (obs_time*Incubation_days*(other_failed +predated)/2)+(obs_time*Incubation_days*(hatched+infertile))]
-    b[, DPR_orig_recalc:= predated/exposure_recal]
-    b[is.na(DPR_orig_recalc), DPR_orig_recalc := DPR_orig]
+    
+    b[, DPR_orig_recalc := DPR_orig]
+    b[DPRtrans=='YES', DPR_orig_recalc:= predated/exposure_recal]
 
+  # recalculate DPR using 50% exposure for transformed data
     r = 0.5
     b[, exposure_trans50 := exposure_recal]
-    b[, DPRtrans50 := DPR_orig_recalc]
     b[DPRtrans=='YES', exposure_trans50 :=(r*Incubation_days*(other_failed +predated)/2)+(r*Incubation_days*(hatched+infertile))]
-    b[DPRtrans=='YES',DPRtrans50:= predated/exposure_trans50]
+
+    b[, DPRtrans50 := DPR_orig_recalc]
+    b[DPRtrans=='YES',DPRtrans50:= predated/exposure_trans50]  
 
 # explore the differences
     summary(b$DPRtrans50-b$DPR_orig_recalc)
 
-    ggplot(b[DPRtrans=='YES'], aes(x = log(DPR_orig_recalc+0.01), y = log(DPRtrans50+0.01))) + geom_point()
-    ggplot(b[DPRtrans=='YES'], aes(x = (DPR_orig_recalc), y = (DPRtrans50))) + geom_point()
+    ggplot(b[DPRtrans=='YES'], aes(x = log(DPR_orig_recalc+0.01), y = log(DPRtrans50+0.01))) + geom_point()+geom_abline(slope =1, intercept = 0, lty = 3) 
+    ggplot(b[DPRtrans=='YES'], aes(x = (DPR_orig_recalc), y = (DPRtrans50))) + geom_point()+geom_abline(slope =1, intercept = 0, lty = 3) 
 
-    ggplot(b[DPRtrans=='YES'], aes(x = log(DPR_orig_recalc+0.01) - log(DPRtrans50+0.01), y = Latitude)) + geom_point()
-    ggplot(b[DPRtrans=='YES'], aes(x = DPR_orig_recalc - DPRtrans50, y = Latitude)) + geom_point()
+    ggplot(b[DPRtrans=='YES'], aes(y = log(DPR_orig_recalc+0.01) - log(DPRtrans50+0.01), x = Latitude)) + geom_point()
+    ggplot(b[DPRtrans=='YES'], aes(y = DPR_orig_recalc - DPRtrans50, x = Latitude)) + geom_point()
     #ggplot(b, aes(x = log(DPR_orig_recalc+0.01), y = log(DPRtrans50+0.01))) + geom_point()
-
-# Table - only predictors scaled -  linear and mixed models with original and 50% transformation
-  # linear  
-    m0 = lm(log(DPR_orig+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)+scale(abs(Latitude)),  data = b)
-    summary(glht(m0))
-    m0_50 = lm(log(DPRtrans50+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)+scale(abs(Latitude)), data = b)
-    summary(glht(m0_50))
-
-    m3 = lm(log(DPR_orig+0.01) ~ log(N_nests) + hemisphere*scale(mean_year)*scale(abs(Latitude)),  data = b)
-    summary(glht(m3))
-    m3_50 = lm(log(DPRtrans50+0.01) ~ log(N_nests) + hemisphere*scale(mean_year)*scale(abs(Latitude)), data = b)
-    summary(glht(m3_50))
-
-     m2 = lm(log(DPR_orig+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)*scale(abs(Latitude)),  data = b)
-    summary(glht(m2))
-    m2_50 = lm(log(DPRtrans50+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)*scale(abs(Latitude)), data = b)
-    summary(glht(m2_50))
-  # mixed    
-    mm0 = lmer(log(DPR_orig+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)+scale(abs(Latitude)) + (1|site), data = b)
-    summary(glht(mm0))
-
-    mm0_50 = lmer(log(DPRtrans50+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)+scale(abs(Latitude)) + (1|site), data = b)
-    summary(glht(mm0_50))
-
-    mm3 = lmer(log(DPR_orig+0.01) ~ log(N_nests) + hemisphere*scale(mean_year)*scale(abs(Latitude)) + (1|site), data = b)
-    summary(glht(mm3))
-
-    mm3_50 = lmer(log(DPRtrans50+0.01) ~ log(N_nests) + hemisphere*scale(mean_year)*scale(abs(Latitude)) + (1|site), data = b)
-    summary(glht(mm3_50))
-
-    mm2 = lmer(log(DPR_orig+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)*scale(abs(Latitude)) + (1|site), data = b)
-    summary(glht(mm2))
-
-    mm2_50 = lmer(log(DPRtrans50+0.01) ~ log(N_nests) + hemisphere + scale(mean_year)*scale(abs(Latitude)) + (1|site), data = b)
-    summary(glht(mm2_50))
-  # export model results - Table
-    o1 = m_out_lm(name = "linear Kubelka", model = m3, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
-    o2 = m_out_lm(name = "linear 50%", model = m3_50, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
-    o3 = m_out(name = "mixed Kubelka", model = mm3, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
-    o4 = m_out(name = "mixed 50%", model = mm3_50, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
-    
-    o1$p_value = NA
-    o1$p_value[1:9] = round(summary(glht(m3))$test$pvalues,2)
-    o2$p_value = NA
-    o2$p_value[1:9] = round(summary(glht(m3_50))$test$pvalues,2)
-    o3$p_value = NA
-    o3$p_value[1:9] = round(summary(glht(mm3))$test$pvalues,2)
-    o4$p_value = NA
-    o4$p_value[1:9] = round(summary(glht(mm3_50))$test$pvalues,2)
-
-   write_xlsx(rbind(o1,o2,o3,o4), 'Outputs/Table_Note6.xlsx')
 
 # plot - all scaled
   # prepare model predictions
@@ -114,8 +83,7 @@
 
       mm3_50 = lmer(scale(log(DPR_orig+0.01)) ~ scale(log(N_nests)) + scale(hem01)*scale(mean_year)*scale(abs(Latitude)) + (1|site), data = b)
       summary(glht(mm3_50))
-
-    # export results 
+    # results 
       o1 = m_out_lm(name = "linear Kubelka", model = m3, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
       o2 = m_out_lm(name = "linear 50%", model = m3_50, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
       o3 = m_out(name = "mixed Kubelka", model = mm3, round_ = 3, nsim = 5000, aic = FALSE)[1:6]
