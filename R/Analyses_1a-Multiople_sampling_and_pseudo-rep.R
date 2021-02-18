@@ -141,10 +141,7 @@
 
     ggplot(data, aes(y = Latitude, x = Longitude)) + geom_jitter(aes(size = N_nests), alpha = 0.5)
     quartz.save(glue(here::here(),"/Outputs/N-nest_per_estimate_geography.png"), type = "png")
-    ggsave(file = glue(here::here(),"/Outputs/N-nest_per_estimate_geography.png", dpi = 300, width = 10, height = 8, units = "cm") 
-    
-
-    
+    ggsave(file = glue(here::here(),"/Outputs/N-nest_per_estimate_geography.png", dpi = 300, width = 10, height = 8, units = "cm")
 
     ggplot(data, aes(x = abs(Latitude), y = TPR, col = mean_year)) + geom_jitter(aes(size = N_nests), alpha = 0.5)
     ggplot(data, aes(x = abs(Latitude), y = DPR, col = mean_year)) + geom_jitter(aes(size = N_nests), alpha = 0.5)
