@@ -20,7 +20,7 @@
 
 # check whether Beintema transformation of Kubelka follows from their methods 
 # i.e. whether exposure in their dataset and recalculated based on their data and methods are same
-# mostly yes (for transformed data 5 datapoints are off, for non-transfomred 6)
+# mostly yes (for transformed data 5 data-points are off, for non-transformed 6)
     # for transformed data
       u=b[b$DPRtrans=='YES',]
       #u=u[-which(is.na(u$obs_time)| is.na(u$other_failed)),]
