@@ -1,0 +1,436 @@
+---
+title: "Scrutinizing Erratum to Kubelka et al. 2018"
+author: "Martin Bulla, Mihai Valcu & Bart Kempenaers"
+date: "`r Sys.time()`"
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "Output") })
+output: 
+    html_document:
+        toc: true
+        toc_float: true
+        toc_depth: 5
+        number_sections: true
+        code_folding: hide
+---
+<style type="text/css">
+
+td {  /* Table  */
+  font-size: 12px;
+}
+
+h1 { /* Header 1 */
+  font-size: 24px;
+}
+h2 { /* Header 2 */
+    font-size: 20px;
+    
+}
+h3 { /* Header 3 */
+  font-size: 16px;
+
+}
+h4 { /* Header 4 */
+  font-size: 16px;
+  color: DarkGrey;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 12px;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+***
+# Background 
+In their [Erratum](https://science.sciencemag.org/content/suppl/2018/11/07/362.6415.680.DC1) to the [original publication](https://science.sciencemag.org/content/362/6415/680) in Science, Kubelka et al. attempted to correct their scripts so that the variances for phylogeny and spatial terms are correctly estimated (i.e. not underestimated as was the case in their [original Tables](https://science.sciencemag.org/content/sci/suppl/2018/11/07/362.6415.680.DC1/aat8695-Kubelka-SM.pdf)). [Kubelka et al. 2020](https://science.sciencemag.org/content/suppl/2018/11/07/362.6415.680.DC1) state: "*Correcting this error increased the variance attributable to space, accounting for multiple data points per field sites as well as distance among field sites. The corrected models produced qualitatively identical results with the original ones, and therefore conclusions remain unchanged.*" 
+
+Although the variance attributed to the space, field site and distance among field sites might have increased in some of the models, the residuals of the models are still confounded by field site and thus the models did not adequately account for the multiple data points per field site. Doing so weakens the reported trends and increases the uncertainty in such trends. Here, we demonstrate this on (1) a simple model that uses only high quality data and test for the general temporal trend, i.e. model behind [Kubelka et al.'s Table S3D](https://science.sciencemag.org/content/sci/suppl/2018/11/07/362.6415.680.DC1/aat8695-Kubelka-SM-revision.1.pdf), and on (2) a model that tests for the interaction of interest between hemisphere, absolute latitude and mean year of the study, i.e. a model that was tested, but not reported, by Kubelka et al. - see their [original dryad scripts](https://datadryad.org/stash/dataset/doi:10.5061/dryad.45g90h4).
+
+
+Note that Kubelka et al. 2020](https://science.sciencemag.org/content/suppl/2018/11/07/362.6415.680.DC1) have corrected their scripts by replacing the control for multiple data points per species (random intercept for species) with a random intercept that has as many levels as the rows in the dataset. It is unclear why this was done, but specifying field site as a random intercept (within Kubelka et al's model) does adequately account for the multiple sampling within field sites.
+
+
+***
+
+Code to load tools and prepare data runs relative to the project's root directory, and uses [Kubelka et 
+al's 2020](https://osf.io/6ptfs/) data and functions. 
+```{r tools, results="hide", warning = FALSE, message = FALSE}
+  require(here)
+  source(here::here('Kubelka et al. 2020_ScienceErratum_Data and Scripts/functions.R'))
+  require(knitr)
+  require(data.table)
+  require(flextable)
+  require(magrittr)
+  require(kableExtra)
+  require(arm)
+
+  # function form https://stackoverflow.com/questions/43720260/how-to-extract-p-values-from-lmekin-objects-in-coxme-package
+    extract_coxme_table <- function (mod){ 
+        beta <- mod$coefficients$fixed 
+        nvar <- length(beta) 
+        nfrail <- nrow(mod$var) - nvar 
+        se <- sqrt(diag(mod$var)[nfrail + 1:nvar]) 
+        z<- round(beta/se, 2) 
+        p<- signif(1 - pchisq((beta/se)^2, 1), 2) 
+        table=data.frame(cbind(beta,se,z,p)) 
+        return(table) 
+    }   
+  # Load trees
+    trees <- read.tree(here::here("Data/trees2.phy" ))
+    tree <- trees[[42]]  # just choose one to start with
+
+    idx <- which( tree$tip == "Charadrius_alexandrinus")
+    np <- nodepath(tree)[[idx]]
+    to <- np[ length( np ) - 1] 
+    ed <- which( tree$edge[,2] == idx)
+
+    tree1 <- bind.tip( tree, "Charadrius_nivosus", edge.length = tree$edge.length[ed], where = to )
+    tree2 <- addInTip( tree1,"Gallinago_gallinago", "Gallinago_delicata" )
+
+    data <- read.csv(here::here("Kubelka et al. 2020_ScienceErratum_Data and Scripts/DATApopulations_given.csv"), sep=";")
+    data$site = paste(data$Latitude, data$Longitude)
+    data$NS <- data$Latitude > 0
+    data$hemi = ifelse(data$NS == TRUE, 1, 0)
+```
+
+***
+
+# Scrutinizing Table S3D 
+The table contains model output that is based on a dataset containing only directly calculated, high quality, estimates (N = 97). <span style="color:grey">Distribution of species (data points) across study sites:</span>
+
+```{r distribution,  warning = FALSE, message = FALSE, results = 'asis', ft.align="left"}
+xx = data.frame(table(data$site))
+xxx = data.table(species = names(table(xx$Freq)), N_sites = as.numeric(table(xx$Freq)))
+#xxx %>% regulartable() %>% autofit(add_w = 0.05, add_h = 0.05, part = 'all')  %>% align(align = "right", part = "all") %>% fontsize(size = 10, part = 'all') %>% theme_alafoli() #width(j=~species,width=0.5) %>% width(j=~N_sites,width=0.5) %>% set_caption('Distribution of species (data points) across study sites') 
+#kable(xxx, caption = 'Distribution of species (data points) across study sites',fromat = "html", table.attr = "style='width:30%;'")
+xxx %>%
+  kbl %>%
+  kable_classic(full_width = F,fixed_thead = F, bootstrap_options = "striped",  position = "left")
+```
+
+##  ORIGINAL model from the initial Kubelka et al publication
+The model controls for multiple data points per species, but not per study site. The model residuals are confounded by site
+```{r original, warning = FALSE, message = FALSE}
+
+phyloMat <- vcv.phylo( tree2 )
+phyloMat <- phyloMat / max( phyloMat )
+
+distanceMatrix <- dist.mat( data$Latitude, data$Longitude, data$species ) 
+diag( distanceMatrix ) <- diag(distanceMatrix) + 0.01
+distanceMatrix <- distanceMatrix / 1.01
+
+I0 <- diag(1, dim(data)[1] )
+rownames(I0) <- colnames(I0) <- data$species 
+I <- diag(1 / data$N_nests )
+I <- I / max(I)
+rownames(I) <- colnames(I) <- data$species 
+
+m <- lmekin( log(DPR) ~ (1|species) + mean_year +  log( N_nests), 
+                        varlist = list( I, phyloMat, distanceMatrix), data = data )
+#m
+data$res = resid(m)
+mr <- lmer(res ~ 1+(1|site),  data = data)
+#summary(mr)
+l=data.frame(summary(mr)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri 
+```
+***
+##  ERRATUM model from the  Kubelka et al publication
+The model with a random effect that has as many levels as the rows in the dataset. Despite claims in the Erratum, the residuals from this model are still confounded by study site.
+```{r erratum,  warning = FALSE, message = FALSE}
+idx <- match(data$species, rownames(phyloMat)) 
+matchedPhyloMat <- phyloMat[idx,idx]
+data2 <- data
+data2$speciesM <- paste(data$species, data$pop_nr)
+matchedPhyloMat2 <- matchedPhyloMat
+rownames(matchedPhyloMat2 ) <- data2$speciesM
+distanceMatrix2 <- distanceMatrix
+rownames(distanceMatrix2) <- data2$speciesM
+data2 <- order.D(data2)
+matchedPhyloMat2 <- order.V(matchedPhyloMat2 )
+distanceMatrix2 <- order.V(distanceMatrix2)
+I <- diag(1 / data2$N_nests )
+I <- I / max(I)
+rownames(I) <- colnames(I) <- data2$speciesM 
+
+Model_19 <- lmekin( log(DPR) ~ (1|speciesM) + mean_year + log( N_nests), 
+                   varlist = list( matchedPhyloMat2, distanceMatrix2, I ), 
+                   vinit = c(0.1,0.1,0.1), method = "REML",
+                   data = data2 )
+#Model_19
+data2$res = resid(Model_19)
+mr2 <- lmer(res ~ 1+(1|site),  data = data2)
+#summary(mr2)
+l=data.frame(summary(mr2)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri 
+```
+***
+##  Controlling Kubelka et al's model for site
+Model with site as random intercept. The residuals from this model are not confounded by study site.
+```{r site, warning = FALSE, message = FALSE}
+idx <- match(data$species, rownames(phyloMat)) 
+matchedPhyloMat <- phyloMat[idx,idx]
+data3 <- data
+matchedPhyloMat3 <- matchedPhyloMat
+rownames(matchedPhyloMat3 ) <- data3$site
+distanceMatrix3 <- distanceMatrix
+rownames(distanceMatrix3) <- data3$site
+data3 <- order.D(data3)
+matchedPhyloMat3 <- order.V(matchedPhyloMat3 )
+distanceMatrix3 <- order.V(distanceMatrix3)
+I <- diag(1 / data3$N_nests )
+I <- I / max(I)
+rownames(I) <- colnames(I) <- data3$site 
+
+Model_19_site <- lmekin( log(DPR) ~ (1|site) + mean_year + log( N_nests), 
+                   varlist = list( matchedPhyloMat3, distanceMatrix3, I ), 
+                   vinit = c(0.1,0.1,0.1), 
+                   method = "REML",
+                   data = data2 )
+#Model_19_site
+data3$res = resid(Model_19_site)
+mr3 <- lmer(res ~ 1+(1|site),  data = data3)
+#summary(mr3)
+l=data.frame(summary(mr3)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri  
+```
+***
+## Linear mixed effect model controlled for site
+```{r lmer, warning = FALSE, message = FALSE}
+m_lmer <- lmer( log(DPR) ~  mean_year + log( N_nests) + (1|species) + (1|site), 
+                   data = data3)
+#summary(m_lmer)
+data3$res = resid(m_lmer)
+mr4 <- lmer(res ~ 1+(1|site),  data = data3)
+#summary(mr4)
+l=data.frame(summary(mr4)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri  
+```
+***
+***
+## Changing (decreasing) effect sizes and uncertainties across the four models
+### Mean year effect only
+```{r tableY, warning = FALSE, message = FALSE}
+  ms = setDT(rbind(extract_coxme_table(m)[2,],extract_coxme_table(Model_19)[2,],extract_coxme_table(Model_19_site)[2,],data.frame(beta = fixef(m_lmer)[2], se = se.fixef(m_lmer)[2], z= summary(glht(m_lmer))$test$tstat[2], p = summary(glht(m_lmer))$test$pvalues[2])), keep.rownames = TRUE)
+names(ms)[1] = 'model' 
+ms[, model:= c('Original', 'Erratum', 'Control site','Control site lmer')]
+ms[, beta:= round(beta,3)]
+ms[, se:= round(se,3)]
+ms[, z:= round(z,3)]
+ms[, p:= round(p,3)]
+
+ms %>% kbl()%>%#kbl(caption = "Distribution of species (data points) across study sites") %>%
+ kable_classic(full_width = F,fixed_thead = F, bootstrap_options = "striped",  position = "left")
+```
+
+***
+
+### Full model outputs
+#### Original model:
+```{r summariesO, warning = FALSE, message = FALSE}
+m
+```
+#### Erratum model:
+```{r summariesE, warning = FALSE, message = FALSE}
+Model_19
+```
+#### Control site model:
+```{r summariesS, warning = FALSE, message = FALSE}
+Model_19_site
+```
+#### Control site lmer model:
+```{r summariesSl, warning = FALSE, message = FALSE}
+summary(m_lmer)
+```
+
+***
+# Scrutinizing three-way interaction
+
+##  ORIGINAL model from the initial Kubelka et al publication
+The model controls for multiple data points per species, but not per study site. The model residuals are confounded by site
+```{r original3, warning = FALSE, message = FALSE}
+data <- read.csv( here::here("Data/DATApopulations.csv"), sep=";")
+
+data$site = paste(data$Latitude, data$Longitude)
+data$NS <- data$Latitude > 0
+data$hemi = ifelse(data$NS == TRUE, 1, 0)
+
+distanceMatrix <- dist.mat( data$Latitude, data$Longitude, data$species ) 
+diag( distanceMatrix ) <- diag(distanceMatrix) + 0.01
+distanceMatrix <- distanceMatrix / 1.01
+
+I0 <- diag(1, dim(data)[1] )
+rownames(I0) <- colnames(I0) <- data$species 
+I <- diag(1 / data$N_nests )
+I <- I / max(I)
+rownames(I) <- colnames(I) <- data$species 
+
+m <- lmekin( log(DPR) ~ (1|species) + log( N_nests) +
+                        NS*scale(mean_year)*scale(abs( Latitude)), 
+                        varlist = list( I, phyloMat, distanceMatrix), data = data )
+#m
+data$res = resid(m)
+mr <- lmer(res ~ 1+(1|site),  data = data)
+#summary(mr)
+l=data.frame(summary(mr)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri 
+```
+***
+##  ERRATUM model from the  Kubelka et al publication
+The model with a random effect that has as many levels as the rows in the dataset. Despite claims in the Erratum, the residuals from this model are still confounded by study site.
+```{r erratum3,  warning = FALSE, message = FALSE}
+idx <- match(data$species, rownames(phyloMat)) 
+matchedPhyloMat <- phyloMat[idx,idx]
+data2 <- data
+data2$speciesM <- paste(data$species, data$pop_nr)
+matchedPhyloMat2 <- matchedPhyloMat
+rownames(matchedPhyloMat2 ) <- data2$speciesM
+distanceMatrix2 <- distanceMatrix
+rownames(distanceMatrix2) <- data2$speciesM
+data2 <- order.D(data2)
+matchedPhyloMat2 <- order.V(matchedPhyloMat2 )
+distanceMatrix2 <- order.V(distanceMatrix2)
+I <- diag(1 / data2$N_nests )
+I <- I / max(I)
+rownames(I) <- colnames(I) <- data2$speciesM 
+
+Model_23 <- lmekin( log(DPR) ~ (1|speciesM) + scale(log( N_nests)) + 
+                              NS*scale(mean_year)*scale(abs( Latitude)), 
+                   varlist = list( matchedPhyloMat2, distanceMatrix2, I ), 
+                   #vinit = c(0.1,0.1,0.1), 
+                   #method = "REML",
+                   data = data2 )
+#Model_23
+data2$res = resid(Model_23)
+mr2 <- lmer(res ~ 1+(1|site),  data = data2)
+#summary(mr2)
+l=data.frame(summary(mr2)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri 
+```
+***
+##  CONTROLLING Kubelka et al's model for site
+Model with site as random intercept. The residuals from this model are not confounded by study site.
+```{r site3, warning = FALSE, message = FALSE}
+idx <- match(data$species, rownames(phyloMat)) 
+matchedPhyloMat <- phyloMat[idx,idx]
+data3 <- data
+matchedPhyloMat3 <- matchedPhyloMat
+rownames(matchedPhyloMat3 ) <- data3$site
+distanceMatrix3 <- distanceMatrix
+rownames(distanceMatrix3) <- data3$site
+data3 <- order.D(data3)
+matchedPhyloMat3 <- order.V(matchedPhyloMat3 )
+distanceMatrix3 <- order.V(distanceMatrix3)
+I <- diag(1 / data3$N_nests )
+I <- I / max(I)
+rownames(I) <- colnames(I) <- data3$site 
+
+Model_23_site <- lmekin( log(DPR) ~ (1|site) + scale(log( N_nests)) + 
+                              NS*scale(mean_year)*scale(abs( Latitude)), 
+                   varlist = list( matchedPhyloMat3, distanceMatrix3, I ), 
+                   vinit = c(0.1,0.1,0.1), 
+                   method = "REML",
+                   data = data3 )
+#Model_23_site
+data3$res = resid(Model_23_site)
+mr3 <- lmer(res ~ 1+(1|site),  data = data3)
+#summary(mr3)
+l=data.frame(summary(mr3)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri  
+```
+***
+## Linear mixed effect model controlled for site
+```{r lmer3, warning = FALSE, message = FALSE}
+m_lmer <- lmer( log(DPR) ~  scale(log( N_nests)) + NS*scale(mean_year)*scale(abs( Latitude)) + 
+                   (1|species) + (1|site), 
+                   data = data3)
+#summary(m_lmer)
+data3$res = resid(m_lmer)
+mr4 <- lmer(res ~ 1+(1|site),  data = data3)
+#summary(mr4)
+l=data.frame(summary(mr4)$varcor)
+             l = l[is.na(l$var2),]
+             l$var1 = ifelse(is.na(l$var1),"",l$var1)
+             l$pred = paste(l$grp,l$var1)
+             ri=data.frame(effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)))
+             ri$estimate_r = paste(ri$estimate_r,'%',sep='')
+             ri  
+```
+***
+***
+## Changing (decreasing) effect sizes and uncertainties across the four models
+### Three-way interaction only
+```{r table3, warning = FALSE, message = FALSE}
+  ms = setDT(rbind(extract_coxme_table(m)[9,],extract_coxme_table(Model_23)[9,],extract_coxme_table(Model_23_site)[9,],data.frame(beta = fixef(m_lmer)[9], se = se.fixef(m_lmer)[9], z= summary(glht(m_lmer))$test$tstat[9], p = summary(glht(m_lmer))$test$pvalues[9])), keep.rownames = TRUE)
+names(ms)[1] = 'model' 
+ms[, model:= c('Original', 'Erratum', 'Control site','Control site lmer')]
+ms[, beta:= round(beta,3)]
+ms[, se:= round(se,3)]
+ms[, z:= round(z,3)]
+ms[, p:= round(p,3)]
+
+ms %>% kbl()%>%#kbl(caption = "Distribution of species (data points) across study sites") %>%
+ kable_classic(full_width = F,fixed_thead = F, bootstrap_options = "striped",  position = "left")
+```
+
+***
+
+### Full model outputs
+#### Original model:
+```{r summariesO3, warning = FALSE, message = FALSE}
+m
+```
+#### Erratum model:
+```{r summariesE3, warning = FALSE, message = FALSE}
+Model_23
+```
+#### Control site model:
+```{r summariesS3, warning = FALSE, message = FALSE}
+Model_23_site
+```
+
+#### Control site lmer model:
+```{r summariesSl3, warning = FALSE, message = FALSE}
+summary(m_lmer)
+```
